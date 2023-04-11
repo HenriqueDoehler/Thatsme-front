@@ -1,0 +1,87 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@500&display=swap');
+
+.nav {
+    width: 100vw;
+    height: 10vh;
+    display: flex;
+    position: absolute;
+    background: linear-gradient(180deg, rgba(33, 29, 40, 0.5) 50%, rgba(33, 29, 40, 0) 131.25%);
+    backdrop-filter: blur(2px);
+    z-index: 1000;
+
+}
+
+
+
+.logo {
+    display: inline-block;
+    margin-right: auto;
+  }
+  .logoImg {
+    width: 10rem;
+    margin: 1rem 1rem;
+  }
+  
+
+  .menu {
+    display: flex;
+    
+    flex-direction: row;
+    margin-top: 1rem;
+    position: absolute;
+    background-color: transparent;
+    align-items: center;
+    transition: transform 1s ease;
+    transform: translateX(100vw);
+    
+  }
+  .open {
+    
+    transform: translateX(60vw);
+  }
+  
+  .menu span {
+    margin: 0.5rem;
+    font-size: 2.5rem;
+    color: #f5ecec;
+    cursor: pointer;
+    font-family: 'Inter', sans-serif;
+    align-items: center;
+  }
+  
+   
+  
+  .menuIcon {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    display: block;
+    margin-left: auto;
+  }
+  
+  .menuIcon img {
+    width: 3rem;
+  }
+  
+  @media screen and (max-width: 768px) {
+
+    .menu {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        top: 10vh;
+        background-color: rgba(39, 38, 38, 0.445);
+        width: auto;
+        height: 50vh;
+
+    }
+
+    .open {
+    
+        transform: translateX(60vw);
+      }
+ 
+
+    
+  }
+  
