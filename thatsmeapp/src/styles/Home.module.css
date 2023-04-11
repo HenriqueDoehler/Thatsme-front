@@ -8,14 +8,24 @@
   align-items: center;
   padding: 6rem;
   min-height: 100vh;
-  background-image: '/logoBlack.png';
 }
 
 .logoimg {
-  width: 500px;
+  position: absolute;
+  margin-top: 10%;
+  width: 30vw;
   height: auto;
 }
+@media screen and (max-width: 480px) {
+  .logoimg {
+    margin-top: 50%;
+    width: 70%; 
+    height: auto; 
+  }
+}
+
 
 .textSoon{
   font-family: 'Slackey', cursive;
+  white-space: nowrap;
 }

@@ -15,7 +15,7 @@ export default function Home() {
         <h1 className={styles.textSoon}>EM BREVE</h1>
         <img
           className={styles.logoimg}
-          src="/logoBlack.png"
+          src="/logoWhite.svg"
           alt="Logo Loading..."
         />
       </main>
