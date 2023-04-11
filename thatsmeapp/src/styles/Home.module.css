@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Slackey&display=swap');
+
+
 .main {
   display: flex;
   flex-direction: column;
@@ -5,5 +8,14 @@
   align-items: center;
   padding: 6rem;
   min-height: 100vh;
+  background-image: '/logoBlack.png';
 }
 
+.logoimg {
+  width: 500px;
+  height: auto;
+}
+
+.textSoon{
+  font-family: 'Slackey', cursive;
+}
