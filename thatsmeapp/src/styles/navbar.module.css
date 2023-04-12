@@ -2,7 +2,7 @@
 
 .nav {
     width: 100vw;
-    height: 10vh;
+    height: 100px;
     display: flex;
     position: absolute;
     background: linear-gradient(180deg, rgba(33, 29, 40, 0.5) 50%, rgba(33, 29, 40, 0) 131.25%);
@@ -28,9 +28,10 @@
     transform: translateX(100%);
     width: 100%;
     
+    
   }
   .open {
-    transform: translateX(50%);
+    transform: translateX(30%);
   }
   
   .menu span {
@@ -40,6 +41,7 @@
     cursor: pointer;
     font-family: 'Inter', sans-serif;
     align-items: center;
+    margin-right: 90px;
   }
       .menuIcon {
     background-color: transparent;
@@ -80,6 +82,9 @@
       .menuIcon img {
         width: 2rem;
         margin: 50% 0%;    
+      }
+      .menu span {
+        margin-right: 0;
       }
   }
   

@@ -17,17 +17,17 @@ const Navbar = () => {
         </Link>
       </div>
       <button className={styles.menuIcon} onClick={handleMenuClick}>
-        <img src="/menuIcon.svg" alt="loading ...." />
+        <img src={isOpen ? "/X.svg" : "/menuIcon.svg"} alt="loading ...." />
       </button>
       <div className={`${styles.menu} ${isOpen ? styles.open : ""}`}>
         <Link style={{ textDecoration: "none" }} href="/" passHref>
           <span>Home</span>
         </Link>
         <Link style={{ textDecoration: "none" }} href="/about" passHref>
-          <span>About</span>
+          <span>FAQ & Suporte</span>
         </Link>
         <Link style={{ textDecoration: "none" }} href="/contact" passHref>
-          <span>Contact</span>
+          <span>Como funciona</span>
         </Link>
       </div>
     </nav>
