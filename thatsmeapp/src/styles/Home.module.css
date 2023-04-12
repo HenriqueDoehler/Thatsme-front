@@ -3,34 +3,6 @@
 
 .main {
   display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-  padding: 6rem;
-  min-height: 100vh;
+
 }
 
-.logoimg {
-  position: absolute;
-  margin-top: 10%;
-  width: 30vw;
-  height: auto;
-  -webkit-user-drag: none;
-  -user-drag: none;
-  -webkit-user-select: none;
-  user-select: none;
-  pointer-events: none;
-}
-@media screen and (max-width: 480px) {
-  .logoimg {
-    margin-top: 50%;
-    width: 70%; 
-    height: auto; 
-  }
-}
-
-
-.textSoon{
-  font-family: 'Slackey', cursive;
-  white-space: nowrap;
-}
