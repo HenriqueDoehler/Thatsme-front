@@ -32,7 +32,11 @@ const Navbar = () => {
       <button className={styles.menuIcon} onClick={handleMenuClick}>
         <img src={isOpen ? "/X.svg" : "/menuIcon.svg"} alt="MENU" />
       </button>
-      <div className={`${styles.menu} ${isOpen ? styles.open : ""}`}>
+      <div
+        className={`${styles.menu} ${isOpen ? styles.open : ""} ${
+          isOpen ? styles.fadeIn : ""
+        }`}
+      >
         <Link style={{ textDecoration: "none" }} href="/" passHref>
           <span>Home</span>
         </Link>

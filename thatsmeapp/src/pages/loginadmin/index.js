@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Head from "next/head";
 import Link from "next/link";
 import { useRouter } from "next/router";
@@ -10,6 +10,13 @@ export default function Login() {
   const [email, setEmail] = useState("");
   const [senha, setPassword] = useState("");
   const [error, setError] = useState("");
+
+  useEffect(() => {
+    if (window.innerWidth < 700) {
+      document.body.innerHTML =
+        "<h1>Histórico/Dashboard administrativo não disponível em dispositivos móveis</h1>";
+    }
+  }, []);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -46,12 +53,12 @@ export default function Login() {
       <Navbar />
       <div className={styles.container}>
         <div className={styles.imgLogin}>
-          <img src="/loginimg.svg" alt="Sua imagem SVG" />
+          <img src="/loginimg.svg" alt="loading ..." />
         </div>
         <form onSubmit={handleSubmit}>
           {error && <div className={styles.error}>{error}</div>}
           <div>
-            <label htmlFor="email">Email:</label>
+            <label htmlFor="email">E-mail:</label>
             <input
               className={styles.label}
               type="email"

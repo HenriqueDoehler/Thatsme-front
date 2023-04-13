@@ -1,8 +1,146 @@
 @import url('https://fonts.googleapis.com/css2?family=Slackey&display=swap');
 
 
-.main {
+.container {
   display: flex;
+  justify-content: space-between
+;
+  align-items: center;
+  max-width: 100vw;
+  height: 100vh;
+}
+
+.left1 img{
+margin-top: 100px;
+}
+
+.left2 img {
+  margin-top:310px ;
+  margin-left: -150px;
+ 
+}
+
+.right {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 500px;
+  position:absolute;
+  margin-left: 48%;
+  opacity: 0;
+  animation: fadeIn 2s ease-in-out forwards;
 
 }
 
+.right img {
+  width: 280px;
+  margin-bottom: 20px;
+}
+
+
+
+
+.input  {
+  padding: 8px 8px 8px 24px;
+  gap: 8px;
+  width: 480px;
+  height: 52px;
+   background: rgba(239, 239, 255, 0.07);
+   border: 1px solid #353535;
+   border-radius: 90px;
+   color: whitesmoke;
+}
+
+.button{
+  position: absolute;
+  margin-top: 3.5px;
+  margin-left: -110px;
+  align-items: center;
+  padding: 8px 16px;
+
+  width: 110px;
+  height: 46px;
+
+  background: #9E9E9E;
+  border-radius: 60px;
+
+   background: #9E9E9E;
+   color: whitesmoke;
+   
+
+}
+.label {
+  display: flex;
+  justify-content: center;
+  padding-bottom: 10px;
+}
+.containerImage{
+  display: flex;
+  max-width: 100vw;
+}
+
+.button:hover{
+  background: linear-gradient(to right, #D4942B 0%, #CC392C 100%);
+}
+
+@media screen and (max-width: 1020px) {
+  .right img {
+    width: 220px;
+    
+  }
+  .input{
+    width: 430px;
+  }
+
+  .containerImage{
+    display: none;
+    
+  }
+  .right{
+    position: absolute;
+    margin-left: 20%;
+
+  }
+ 
+
+}
+
+@media screen and (max-width: 660px) {
+
+  .right{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    width: 60%;
+
+  }
+  .right img {
+    width: 120px;
+    
+  }
+  .input{
+    width: 300px;
+  }
+
+}
+
+.beyourbestself  {
+  opacity: 0;
+  animation: fadeIn 2s ease-in-out forwards;
+}
+
+.thatsmeiconligth{
+  opacity: 0;
+  animation: fadeIn 2s ease-in-out forwards;
+
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}

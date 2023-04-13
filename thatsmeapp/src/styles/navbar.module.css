@@ -17,25 +17,26 @@
     width: 9rem;
     margin: 1rem 1.5rem;
   }
- .menu {
-    display: flex;
+ .menu  {
+    display: none;
     flex-direction: row;
-    margin-top: 1rem;
     position: absolute;
     background-color: transparent;
     align-items: center;
-    opacity: 0;
     top: 30px;
-    left: 35%;
-    
-    
+    left: 40%;
+    opacity: 0;
+    transition: opacity 10s ease-in-out;
+  
+ 
   }
   .open {
+    display: flex;
     opacity: 1;
+    
+    
   }
   .menu span {
-    margin: 0.5rem;
-    font-size: 2.5rem;
     color: #f5ecec;
     cursor: pointer;
     font-family: 'Inter', sans-serif;
@@ -50,6 +51,8 @@
   .menu span:hover {
     color: #F39200
   }
+
+
       .menuIcon {
     background-color: transparent;
     border: none;
@@ -75,8 +78,8 @@
       position: absolute;
       flex-direction: column;
       align-items: flex-end;
-      top: calc(10vh + -20px);
-      width: 100vw;
+      top: calc(10vh + -10px);
+      width: 50%;
       height: 50vh;
       background-color: rgba(39, 38, 38, 0.904);
       transition: none;
@@ -93,5 +96,21 @@
       .menu span {
         margin-right: 0;
       }
+  }
+  
+
+  .fadeIn {
+    animation-name: fadeIn;
+    animation-duration: 2s;
+    animation-timing-function: ease-out;
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
   }
   

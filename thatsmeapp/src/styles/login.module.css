@@ -46,6 +46,7 @@ backdrop-filter: blur(5px);
 border-radius: 8px;
 color: rgb(137, 137, 137);
 font-size: large;
+
   }
   
   .imgLogin{
@@ -68,3 +69,6 @@ padding: 8px 16px;
     background: linear-gradient(to right, #D4942B 0%, #CC392C 100%);
       }
   
+      .container label {
+        padding-bottom: 10px;
+      }
