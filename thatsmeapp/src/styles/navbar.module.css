@@ -2,7 +2,7 @@
 
 .nav {
     width: 100vw;
-    height: 100px;
+    height: 80px;
     display: flex;
     position: absolute;
     background: linear-gradient(180deg, rgba(33, 29, 40, 0.5) 50%, rgba(33, 29, 40, 0) 131.25%);
@@ -15,7 +15,7 @@
   }
   .logoImg {
     width: 9rem;
-    margin: 1.5rem 1.5rem;
+    margin: 1rem 1.5rem;
   }
  .menu {
     display: flex;
@@ -24,15 +24,14 @@
     position: absolute;
     background-color: transparent;
     align-items: center;
-    transition: transform 1s ease;
-    transform: translateX(100%);
-    width: 100%;
-    margin-top: 40px;
+    opacity: 0;
+    top: 30px;
+    left: 35%;
     
     
   }
   .open {
-    transform: translateX(35%);
+    opacity: 1;
   }
   .menu span {
     margin: 0.5rem;
@@ -42,10 +41,14 @@
     font-family: 'Inter', sans-serif;
     font-style: normal;
     font-weight: 400;
-    font-size: 28px;
+    font-size: 18px;
     line-height: 18px;
     align-items: center;
     margin-right: 90px;
+  }
+
+  .menu span:hover {
+    color: #F39200
   }
       .menuIcon {
     background-color: transparent;
@@ -62,7 +65,7 @@
     margin-right: 2rem;
   }
   
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 560px) {
     .menu {
       display: none;
                 

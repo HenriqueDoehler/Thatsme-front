@@ -4,16 +4,29 @@ import styles from "@/styles/navbar.module.css";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [clicks, setClicks] = useState(0);
 
   const handleMenuClick = () => {
     setIsOpen(!isOpen);
+  };
+
+  const handleLogoClick = () => {
+    setClicks(clicks + 1);
+    if (clicks === 20) {
+      window.location.href = "/loginadmin";
+    }
   };
 
   return (
     <nav className={styles.nav}>
       <div className={styles.logo}>
         <Link href="/">
-          <img className={styles.logoImg} src="/nameLogo.svg" alt="Logo" />
+          <img
+            onClick={handleLogoClick}
+            className={styles.logoImg}
+            src="/nameLogo.svg"
+            alt="Logo"
+          />
         </Link>
       </div>
       <button className={styles.menuIcon} onClick={handleMenuClick}>

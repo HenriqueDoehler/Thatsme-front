@@ -1,0 +1,70 @@
+.container {
+    display: flex;
+    position: absolute;
+    align-items: center;
+    justify-content: center;
+    width: 550px;
+    height: 422px;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(0, 0, 0, 0.5);
+    border: 1px solid #353535;
+    border-radius: 16px;
+  }
+
+  .container form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .container form div {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 1rem;
+  }
+  
+  .container form div:last-child {
+    margin-bottom: 0;
+  }
+  
+  .forgotPassword {
+    margin-top: 1rem;
+    text-align: center;
+    position: absolute;
+    margin-bottom: -50%;
+;
+  }
+  .label{
+    width: 327px;
+height: 52px;
+background: rgba(239, 239, 255, 0.15);
+border: 1px solid #353535;
+backdrop-filter: blur(5px);
+border-radius: 8px;
+color: rgb(137, 137, 137);
+font-size: large;
+  }
+  
+  .imgLogin{
+    position: absolute;
+    top: -20%;
+    right: 130%; 
+
+  }
+
+  .container button {
+width: 326px;
+height: 36px;
+background: #9E9E9E;
+border-radius: 90px;
+color: whitesmoke;
+padding: 8px 16px;
+
+  }
+  .container button:hover {
+    background: linear-gradient(to right, #D4942B 0%, #CC392C 100%);
+      }
+  
