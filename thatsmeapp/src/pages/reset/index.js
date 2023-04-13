@@ -1,47 +1,48 @@
 import { useState } from "react";
 import Head from "next/head";
-import Link from "next/link";
 import { useRouter } from "next/router";
 import styles from "@/styles/login.module.css";
 import Navbar from "@/components/menu/navbar";
 
-export default function Login() {
+export default function ResetPassword() {
   const router = useRouter();
   const [email, setEmail] = useState("");
-  const [senha, setPassword] = useState("");
+  const [code, setCode] = useState("");
+  const [newPassword, setNewPassword] = useState("");
   const [error, setError] = useState("");
+  const [success, setSuccess] = useState("");
 
   const handleSubmit = async (e) => {
     e.preventDefault();
 
     try {
-      const res = await fetch("https://api.thatsme.site/login", {
+      const res = await fetch("https://api.thatsme.site/reset_password", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({ email, senha }),
+        body: JSON.stringify({ email, code, newPassword }),
       });
 
-      const data = await res.json();
-
       if (res.status === 200) {
-        localStorage.setItem("token", data.token);
-        router.push("/");
+        setSuccess("Senha redefinida com sucesso!");
+        router.push("/loginadmin");
       } else {
         setError(
-          "As credenciais fornecidas estão incorretas. Tente novamente."
+          "Não foi possível redefinir a senha. Verifique as informações e tente novamente."
         );
       }
     } catch (err) {
-      setError("As credenciais fornecidas estão incorretas. Tente novamente.");
+      setError(
+        "Não foi possível redefinir a senha. Tente novamente mais tarde."
+      );
     }
   };
 
   return (
     <>
       <Head>
-        <title>Login</title>
+        <title>Redefinir Senha</title>
       </Head>
       <Navbar />
       <div className={styles.container}>
@@ -50,6 +51,7 @@ export default function Login() {
         </div>
         <form onSubmit={handleSubmit}>
           {error && <div className={styles.error}>{error}</div>}
+          {success && <div className={styles.success}>{success}</div>}
           <div>
             <label htmlFor="email">Email:</label>
             <input
@@ -62,27 +64,30 @@ export default function Login() {
             />
           </div>
           <div>
-            <label htmlFor="password">Senha:</label>
+            <label htmlFor="code">Código:</label>
+            <input
+              className={styles.label}
+              type="text"
+              id="code"
+              value={code}
+              onChange={(e) => setCode(e.target.value)}
+              required
+            />
+          </div>
+          <div>
+            <label htmlFor="newPassword">Nova Senha:</label>
             <input
               className={styles.label}
               type="password"
-              id="password"
-              value={senha}
-              onChange={(e) => setPassword(e.target.value)}
+              id="newPassword"
+              value={newPassword}
+              onChange={(e) => setNewPassword(e.target.value)}
               required
             />
           </div>
 
-          <button type="submit">Entrar</button>
+          <button type="submit">Enviar</button>
         </form>
-        <div className={styles.forgotPassword}>
-          <Link
-            style={{ textDecoration: "none", color: "whitesmoke" }}
-            href="/forgotPassword"
-          >
-            <span>Esqueci minha senha</span>
-          </Link>
-        </div>
       </div>
     </>
   );

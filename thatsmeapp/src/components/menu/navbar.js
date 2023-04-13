@@ -12,7 +12,7 @@ const Navbar = () => {
 
   const handleLogoClick = () => {
     setClicks(clicks + 1);
-    if (clicks === 20) {
+    if (clicks === 10) {
       window.location.href = "/loginadmin";
     }
   };
