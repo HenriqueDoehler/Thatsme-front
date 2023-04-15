@@ -9,22 +9,28 @@
   font-weight: 400;
   font-size: 14px;
   line-height: 17px;
+  /* -webkit-touch-callout: none;  
+  -webkit-user-select: none;    
+  -khtml-user-select: none;     
+  -moz-user-select: none;      
+  -ms-user-select: none;       
+  user-select: none;  */
+
 }
 
 html,
 body {
-  max-width: 100vw;
-  max-height: 100vh;
+
   overflow-x: hidden;
   overflow-y: hidden;
   overscroll-behavior: none;
-  background-color: black;
+  background-color: rgb(3, 3, 3);
   background-image: url('/background.svg');
   background-size: cover;
   color: whitesmoke;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 668px) {
   html,
   body {
     background-image: url('/background-mobile.svg');

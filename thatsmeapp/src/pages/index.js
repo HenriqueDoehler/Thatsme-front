@@ -50,6 +50,7 @@ export default function Home() {
           <div className={styles.containerImage}>
             <div className={styles.left1}>
               <img
+                draggable="false"
                 className={styles.beyourbestself}
                 src="/Beyourbestself.svg"
                 alt="left-image-1"
@@ -57,6 +58,7 @@ export default function Home() {
             </div>
             <div className={styles.left2}>
               <img
+                draggable="false"
                 className={styles.thatsmeiconligth}
                 src="/thatsmeiconligth.svg"
                 alt="left-image-2"
@@ -65,7 +67,11 @@ export default function Home() {
           </div>
 
           <div className={styles.right}>
-            <img src="/Mydigitalwallet.svg" alt="right-image" />
+            <img
+              src="/Mydigitalwallet.svg"
+              alt="right-image"
+              draggable="false"
+            />
             <form onSubmit={handleEmailSubmit}>
               <label className={styles.label} htmlFor="email">
                 Entre na sua digital wallet preenchendo o e-mail abaixo

@@ -38,7 +38,7 @@
 ;
   }
   .label{
-    width: 327px;
+    max-width: 327px;
 height: 52px;
 background: rgba(239, 239, 255, 0.15);
 border: 1px solid #353535;

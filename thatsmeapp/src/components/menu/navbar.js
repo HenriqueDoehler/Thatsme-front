@@ -38,13 +38,13 @@ const Navbar = () => {
         }`}
       >
         <Link style={{ textDecoration: "none" }} href="/" passHref>
-          <span>Home</span>
+          <span className={styles.span}>Home</span>
         </Link>
         <Link style={{ textDecoration: "none" }} href="/about" passHref>
-          <span>FAQ & Suporte</span>
+          <span className={styles.span}>FAQ & Suporte</span>
         </Link>
         <Link style={{ textDecoration: "none" }} href="/contact" passHref>
-          <span>Como funciona</span>
+          <span className={styles.span}>Como funciona</span>
         </Link>
       </div>
     </nav>

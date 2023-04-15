@@ -34,7 +34,7 @@ export default function Login() {
 
       if (res.status === 200) {
         localStorage.setItem("token", data.token);
-        router.push("/");
+        router.push("/dashboard");
       } else {
         setError(
           "As credenciais fornecidas estão incorretas. Tente novamente."

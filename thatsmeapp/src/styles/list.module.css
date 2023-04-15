@@ -1,0 +1,129 @@
+.container{
+    
+    height: 50svh;
+    overflow-y: auto;
+   
+   
+    
+    
+}
+
+.container::-webkit-scrollbar {
+    width: 8px; /* Largura da barra de rolagem */
+  }
+  
+  .container::-webkit-scrollbar-track {
+    background: transparent; /* Cor do fundo da barra de rolagem */
+  }
+  
+  .container::-webkit-scrollbar-thumb {
+    background-color: rgba(0, 0, 0, 0.2); /* Cor da thumb da barra de rolagem */
+    border-radius: 8px; /* Arredondamento da thumb */
+  }
+  
+  .container::-webkit-scrollbar-thumb:hover {
+    background-color: rgba(0, 0, 0, 0.4); /* Cor da thumb da barra de rolagem ao passar o mouse */
+  }
+  
+
+
+.table{
+
+
+color: black;
+width: 100%;
+display: grid;
+align-items: center;
+
+}
+
+.thead{
+    display: flex;
+    flex-direction: row;
+}
+.table th{
+    padding: 1% 1% 1% 0%;
+    min-width: 100px;
+    max-width: 200px;
+    word-wrap: break-word;
+    
+   
+   text-align: left;
+    
+}
+.th{
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 700;
+font-size: 16px;
+line-height: 19px;
+   
+}
+
+.table td {
+    min-width: 15vw;
+    word-wrap: break-word;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19px;
+    color: #636363;
+}
+
+.buttonContainer{
+    width: auto;
+    padding: 10px 10px 5px 60px;
+    display: flex;
+    gap: 20px;
+}
+
+.buttonContainer img:hover{
+    background-color: #636363;
+}
+.th img{
+    padding: 0 3px 0 0;
+}
+.table2{
+    background-color: whitesmoke;
+    margin-bottom: 10px;
+    border: 1px solid #CCCCCC;
+border-radius: 10px;
+overflow: scroll;
+
+}
+.Input {
+    padding: 6px;
+    font-size: 18px;
+    border-width: 1px;
+    border-color: #f7f3f3ad;
+    background-color: #e6181800;
+    color: #ffffff;
+    border-style: none;
+    border-radius: 16px;
+    box-shadow: 0px 0px 5px rgba(66,66,66,.75);
+    text-shadow: 0px 0px 5px rgba(66,66,66,.75);
+}
+
+.buttonClean {
+    font-size:10px;
+    font-family:Arial;
+    width:100px;
+    
+    border-width:1px;
+    color:#14396a;
+    border-color:#333333;
+    font-weight:bold;
+    border-top-left-radius:6px;
+    border-top-right-radius:6px;
+    border-bottom-left-radius:6px;
+    border-bottom-right-radius:6px;
+    box-shadow:inset 0px 1px 0px 0px #fff6af;
+    text-shadow:inset 0px 1px 0px #ffee66;
+    background:linear-gradient(#ffec64, #ffab23);
+  }
+  
+  .buttonClean:hover {
+    background: linear-gradient(#ffab23, #ffec64);
+  }
