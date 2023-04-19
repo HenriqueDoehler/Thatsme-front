@@ -16,9 +16,7 @@ function Dashboard() {
     // substituir a lista de empresas por outra lista relacionada à empresa clicada
   }
 
-  function handleCadastrarClick() {
-    // exibir o modal de cadastro
-  }
+  function handleCadastrarClick() {}
 
   return (
     <PrivateRoute>
@@ -36,6 +34,12 @@ function Dashboard() {
           <h1 className={styles.h1}>EMPRESAS CADASTRADAS</h1>
           <div className={styles.containerDash}>
             <ListaEmpresas />
+            {/* <div className={styles.topMenu}>
+              <img src="/logoDash.svg" alt="Logo" />
+              <button onClick={handleCadastrarClick}>
+                Cadastrar Nova Empresa
+              </button>
+            </div> */}
           </div>
         </div>
       </div>

@@ -54,12 +54,12 @@ margin-top: 100px;
 .button{
   position: absolute;
   margin-top: 3.5px;
-  margin-left: -110px;
+  margin-left: -90px;
   align-items: center;
   padding: 8px 16px;
   border: 1px solid #353535;
 
-  width: 110px;
+  width: 90px;
   height: 46px;
 
   background: #9E9E9E;
@@ -121,7 +121,7 @@ margin-top: 100px;
     
   }
   .input{
-    width: 300px;
+    width: 320px;
   }
   .label{
     font-size: 11px;

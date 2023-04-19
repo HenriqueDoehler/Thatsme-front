@@ -19,12 +19,8 @@
   }
  .menu  {
     display: none;
-    flex-direction: row;
-    position: absolute;
-    background-color: transparent;
-    align-items: center;
-    top: 30px;
-    left: 40%;
+ 
+    margin-left: 50%;
     opacity: 0;
     transition: opacity 10s ease-in-out;
   
@@ -32,6 +28,13 @@
   }
   .open {
     display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    position: absolute;
+    background-color: transparent;
+    align-items: center;
+    justify-content: center;
+    top: 30px;
     opacity: 1;
     
     
@@ -44,7 +47,6 @@
     font-weight: 400;
     font-size: 18px;
     line-height: 18px;
-    align-items: center;
     margin-right: 90px;
   }
 
@@ -77,17 +79,19 @@
       display: flex;
       position: absolute;
       flex-direction: column;
-      align-items: flex-end;
+      align-items: center;
       top: calc(10vh + -10px);
-      width: 60%;
-      height: 30svh;
-      background-color: rgba(39, 38, 38, 0.904);
+      width: 300px;
+      height: 100svh;
+      background-color: rgba(39, 38, 38, 0.99);
       transition: none;
       transform: none;
+      margin: 0 auto;
+      right: 0;
                    
       }
       .nav {
-        width: 99vw;
+        width: 100vw;
        }
       .menuIcon img {
         width: 2rem;
@@ -96,18 +100,19 @@
       .menu span {
         
         margin-right: 0;
-        line-height: 50px;
+        line-height: 80px;
       
       }
       .span{
-       line-height: 200px;
+       line-height: 100px;
+       
       }
   }
   
 
   .fadeIn {
     animation-name: fadeIn;
-    animation-duration: 2s;
+    animation-duration: 0.5s;
     animation-timing-function: ease-out;
   }
   

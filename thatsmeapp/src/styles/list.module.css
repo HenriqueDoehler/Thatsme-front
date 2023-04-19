@@ -1,10 +1,7 @@
 .container{
     
     height: 50svh;
-    overflow-y: auto;
-   
-   
-    
+    overflow-y: auto; 
     
 }
 
@@ -126,4 +123,11 @@ overflow: scroll;
   
   .buttonClean:hover {
     background: linear-gradient(#ffab23, #ffec64);
+  }
+
+
+  .searchContainer{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
   }
