@@ -60,7 +60,7 @@ export default function Home() {
               <img
                 draggable="false"
                 className={styles.thatsmeiconligth}
-                src="/thatsmeiconligth.svg"
+                src="/thatsmeiconLigth.svg"
                 alt="left-image-2"
               />
             </div>
