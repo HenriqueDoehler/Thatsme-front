@@ -72,12 +72,12 @@ export default function Home() {
               alt="right-image"
               draggable="false"
             />
-            <form onSubmit={handleEmailSubmit}>
+            <form className={styles.form} onSubmit={handleEmailSubmit}>
               <label className={styles.label} htmlFor="email">
                 Entre na sua digital wallet preenchendo o e-mail abaixo
               </label>
+
               <div className={styles.inputGroup}>
-                {error && <div className={styles.error}>{error}</div>}
                 <input
                   className={styles.input}
                   type="email"
@@ -87,10 +87,12 @@ export default function Home() {
                   onChange={(e) => setEmail(e.target.value)}
                   required
                 />
-                <button className={styles.button} type="submit">
-                  Acessar
-                </button>
+                {error && <div className={styles.error}>e-mail invalido</div>}
               </div>
+
+              <button className={styles.button} type="submit">
+                Acessar
+              </button>
             </form>
           </div>
         </div>
