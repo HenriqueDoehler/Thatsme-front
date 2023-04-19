@@ -24,7 +24,7 @@ const Navbar = () => {
           <img
             onClick={handleLogoClick}
             className={styles.logoImg}
-            src="/Logo3.svg"
+            src="/logo3.svg"
             alt="Logo"
           />
 
