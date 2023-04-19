@@ -1,21 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@500&display=swap');
 
 * {
-  box-sizing: border-box;
   padding: 0;
   margin: 0;
+  box-sizing: border-box;
   font-family: 'Inter';
   font-style: normal;
   font-weight: 400;
   font-size: 14px;
   line-height: 17px;
-  /* -webkit-touch-callout: none;  
-  -webkit-user-select: none;    
-  -khtml-user-select: none;     
-  -moz-user-select: none;      
-  -ms-user-select: none;       
-  user-select: none;  */
-
 }
 
 html,
@@ -30,13 +23,11 @@ body {
   color: whitesmoke;
 }
 
-@media screen and (max-width: 668px) {
+@media screen and (max-width: 568px) {
   html,
   body {
     background-image: url('/background-mobile.svg');
-    background-size: cover;
-    background-repeat: no-repeat;
-
+    font-size: 14px;
   }
 }
 
