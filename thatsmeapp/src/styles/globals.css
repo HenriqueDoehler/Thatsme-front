@@ -26,7 +26,7 @@ body {
 @media screen and (max-width: 568px) {
   html,
   body {
-    background-image: url('/background-mobile.svg');
+    background-image: url('/backM.png');
     font-size: 14px;
   }
 }
