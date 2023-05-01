@@ -27,7 +27,11 @@ body {
   html,
   body {
     background-image: url('/backM.png');
-    font-size: 14px;
   }
 }
 
+:root {
+	--clr-neon: rgb(238, 139, 40);
+	--clr-bg: rgba(1, 1, 1, 1);
+	--clr-white: rgba(255, 255, 255, 1);
+}

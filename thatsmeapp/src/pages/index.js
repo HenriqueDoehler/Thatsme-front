@@ -1,5 +1,6 @@
 import Head from "next/head";
 import { useState } from "react";
+import { useRouter } from "next/router";
 
 import Navbar from "@/components/menu/navbar";
 
@@ -8,22 +9,18 @@ import styles from "@/styles/Home.module.css";
 export default function Home() {
   const [email, setEmail] = useState("");
   const [error, setError] = useState("");
+  const router = useRouter();
 
   const handleEmailSubmit = async (e) => {
     e.preventDefault();
-
+    console.log(email);
     try {
-      const res = await fetch("https://api.thatsme.site/wallets", {
-        method: "POST",
+      const res = await fetch(`https://api.thatsme.site/wallets/${email}`, {
+        method: "GET",
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({ email }),
       });
-
-      const data = await res.json();
-      console.log(data);
-
       if (res.status === 200) {
         localStorage.setItem("email", email);
         router.push("/wallet");
@@ -33,7 +30,7 @@ export default function Home() {
         );
       }
     } catch (err) {
-      setError("As credenciais fornecidas estão incorretas. Tente novamente.");
+      setError("error");
     }
   };
 
@@ -82,7 +79,7 @@ export default function Home() {
                   className={styles.input}
                   type="email"
                   id="email"
-                  placeholder="Seu e-mail "
+                  placeholder="Seu e-mail"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   required

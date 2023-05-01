@@ -3,6 +3,7 @@ import styles from "@/styles/dashboard.module.css";
 import ListaEmpresas from "@/components/listas/listCompany";
 import PrivateRoute from "@/components/router/privateRouter";
 import { useRouter } from "next/router";
+import Link from "next/link";
 
 function Dashboard() {
   const router = useRouter();
@@ -12,11 +13,12 @@ function Dashboard() {
     router.push("/loginadmin");
   };
 
-  function handleEmpresaClick(empresa) {
-    // substituir a lista de empresas por outra lista relacionada à empresa clicada
-  }
-
-  function handleCadastrarClick() {}
+  useEffect(() => {
+    const token = localStorage.getItem("token");
+    if (!token) {
+      router.push("/loginadmin");
+    }
+  }, []);
 
   return (
     <PrivateRoute>
@@ -34,13 +36,10 @@ function Dashboard() {
           <h1 className={styles.h1}>EMPRESAS CADASTRADAS</h1>
           <div className={styles.containerDash}>
             <ListaEmpresas />
-            {/* <div className={styles.topMenu}>
-              <img src="/logoDash.svg" alt="Logo" />
-              <button onClick={handleCadastrarClick}>
-                Cadastrar Nova Empresa
-              </button>
-            </div> */}
           </div>
+          <Link href="/registerForm">
+            <button className={styles.buttonAdd}>Adicionar Empresa</button>
+          </Link>
         </div>
       </div>
     </PrivateRoute>
