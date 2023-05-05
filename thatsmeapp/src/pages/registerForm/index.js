@@ -44,9 +44,7 @@ export default function Register() {
         throw new Error("Erro ao cadastrar empresa");
       }
 
-      const data = await response.json();
-
-      alert(data.message);
+      alert("EMPRESA CADASTRADA");
 
       window.history.back();
     } catch (error) {
@@ -145,7 +143,7 @@ export default function Register() {
           <button type="submit">Cadastrar</button>
           <button
             onClick={() => {
-              window.location.href = "/dashboard";
+              window.history.back();
             }}
           >
             Cancelar

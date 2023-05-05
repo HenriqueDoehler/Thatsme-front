@@ -170,23 +170,42 @@ export default function EventTable() {
               <table className={styles.table2}>
                 <thead>
                   <tr>
-                    <th className={styles.th}>Codigo Modelo</th>
-                    <th className={styles.th}>Short Code</th>
-                    <th className={styles.th}>Disponivel</th>
+                    <th className={styles.th}>
+                      <img src="/medal.svg" alt="" />
+                      Codigo Modelo
+                    </th>
+                    <th className={styles.th}>
+                      <img src="/medal.svg" alt="" />
+                      Short Code
+                    </th>
+                    <th className={styles.th}>
+                      <img src="/event.svg" alt="" />
+                      Disponivel
+                    </th>
                   </tr>
                 </thead>
 
                 <tr key={medal.id}>
                   <td>{medal.cod_model}</td>
                   <td>{medal.short_code}</td>
-                  <td>{medal.max_uses}</td>
+                  <td>{medal.max_uses} Disponiveis</td>
                   <td>
-                    <img
-                      src="/buttonTrash.svg"
-                      alt=""
-                      className={styles.button}
-                      onClick={() => handleClickDelM(medal.id)}
-                    />
+                    <div className={styles.buttonContainer}>
+                      <div
+                        style={{
+                          height: "30px",
+                          width: "1px",
+                          backgroundColor: "black",
+                          display: "inline-block",
+                        }}
+                      ></div>
+                      <img
+                        src="/buttonTrash.svg"
+                        alt=""
+                        className={styles.button}
+                        onClick={() => handleClickDelM(medal.id)}
+                      />
+                    </div>
                   </td>
                 </tr>
               </table>
@@ -201,10 +220,19 @@ export default function EventTable() {
               <table className={styles.table2}>
                 <thead>
                   <tr>
-                    <th className={styles.th}>Nome</th>
+                    <th className={styles.th}>
+                      <img src="/cnpj.svg" alt="" />
+                      Nome
+                    </th>
 
-                    <th className={styles.th}>E-mail</th>
-                    <th className={styles.th}>Telefone</th>
+                    <th className={styles.th}>
+                      <img src="/emailicon.svg" alt="" />
+                      E-mail
+                    </th>
+                    <th className={styles.th}>
+                      <img src="/phone.svg" alt="" />
+                      Telefone
+                    </th>
                   </tr>
                 </thead>
                 <tr key={user.id}>
@@ -214,12 +242,22 @@ export default function EventTable() {
                   <td>{user.phone}</td>
 
                   <td>
-                    <img
-                      src="/buttonTrash.svg"
-                      alt=""
-                      className={styles.button}
-                      onClick={() => handleClickDel(user.id)}
-                    />
+                    <div className={styles.buttonContainer}>
+                      <div
+                        style={{
+                          height: "30px",
+                          width: "1px",
+                          backgroundColor: "black",
+                          display: "inline-block",
+                        }}
+                      ></div>
+                      <img
+                        src="/buttonTrash.svg"
+                        alt=""
+                        className={styles.button}
+                        onClick={() => handleClickDel(user.id)}
+                      />
+                    </div>
                   </td>
                 </tr>
               </table>

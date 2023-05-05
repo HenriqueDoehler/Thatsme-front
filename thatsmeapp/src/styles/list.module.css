@@ -52,8 +52,9 @@ align-items: center;
 }
 .table th{
     padding: 1% 1% 1% 0%;
-    min-width: 100px;
-    max-width: 200px;
+    /* min-width: 100px;
+    max-width: 200px; */
+    width:250px;
     word-wrap: break-word;
     
    
@@ -100,6 +101,7 @@ line-height: 19px;
     border: 1px solid #CCCCCC;
 border-radius: 10px;
 overflow: scroll;
+padding-left: 20px;
 
 }
 .Input {
@@ -168,4 +170,8 @@ overflow: scroll;
   .buttonContainerEvent{
     width: 30px;
   }
- 
+ .button{
+  
+  margin-right:10px;
+  margin-bottom:10px;
+ }

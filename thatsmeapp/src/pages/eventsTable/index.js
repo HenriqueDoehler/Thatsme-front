@@ -96,11 +96,26 @@ export default function EventTable() {
             <table className={styles.table2} key={event.id}>
               <thead>
                 <tr key={event.id}>
-                  <th className={styles.th}>Nome</th>
-                  <th className={styles.th}>Descrição</th>
-                  <th className={styles.th}>Data</th>
-                  <th className={styles.th}>Endereço</th>
-                  <th className={styles.th}>Hora do evento</th>
+                  <th className={styles.th}>
+                    <img src="/cnpj.svg" alt="" />
+                    Nome
+                  </th>
+                  <th className={styles.th}>
+                    <img src="/pen.svg" alt="" />
+                    Descrição
+                  </th>
+                  <th className={styles.th}>
+                    <img src="/hour.svg" alt="" />
+                    Data
+                  </th>
+                  <th className={styles.th}>
+                    <img src="/place.svg" alt="" />
+                    Endereço
+                  </th>
+                  <th className={styles.th}>
+                    <img src="/hour.svg" alt="" />
+                    Hora do evento
+                  </th>
                 </tr>
               </thead>
               <tbody>
@@ -113,14 +128,13 @@ export default function EventTable() {
                   <td>{event.address}</td>
                   <td>{event.time.substring(0, 5)}</td>
                   <td className={styles.tdX}>
-                    <div className={styles.buttonContainerEvent}>
+                    <div className={styles.buttonContainer}>
                       <div
                         style={{
                           height: "30px",
                           width: "1px",
                           backgroundColor: "black",
                           display: "inline-block",
-                          marginRight: "6px",
                         }}
                       ></div>
                       <img

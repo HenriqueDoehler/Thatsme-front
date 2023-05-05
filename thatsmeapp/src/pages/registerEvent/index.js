@@ -129,7 +129,7 @@ export default function Register() {
           <button type="submit">Cadastrar</button>
           <button
             onClick={() => {
-              window.location.href = "/dashboard";
+              window.history.back();
             }}
           >
             Cancelar
