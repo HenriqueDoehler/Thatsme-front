@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { useRouter } from "next/router";
 import styles from "@/styles/list.module.css";
 import ModalDeleteCompany from "@/components/modals/deleteCompany";
+import Link from "next/link";
 
 export default function EventTable() {
   const [eventsUsers, setEventsUsers] = useState([]);
@@ -186,7 +187,12 @@ export default function EventTable() {
                 </thead>
 
                 <tr key={medal.id}>
-                  <td>{medal.cod_model}</td>
+                  <Link
+                    href={`https://sketchfab.com/models/${medal.cod_model}/edit`}
+                    target="_blank"
+                  >
+                    <td>{medal.cod_model}</td>
+                  </Link>
                   <td>{medal.short_code}</td>
                   <td>{medal.max_uses} Disponiveis</td>
                   <td>

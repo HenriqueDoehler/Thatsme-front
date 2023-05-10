@@ -1,9 +1,7 @@
 import Head from "next/head";
 import { useState } from "react";
 import { useRouter } from "next/router";
-
 import Navbar from "@/components/menu/navbar";
-
 import styles from "@/styles/Home.module.css";
 
 export default function Home() {
@@ -13,7 +11,6 @@ export default function Home() {
 
   const handleEmailSubmit = async (e) => {
     e.preventDefault();
-    console.log(email);
     try {
       const res = await fetch(`https://api.thatsme.site/wallets/${email}`, {
         method: "GET",

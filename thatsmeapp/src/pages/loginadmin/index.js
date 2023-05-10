@@ -51,46 +51,48 @@ export default function Login() {
         <title>Login</title>
       </Head>
       <Navbar />
-      <div className={styles.container}>
-        <div className={styles.imgLogin}>
-          <img src="/loginimg.svg" alt="loading ..." />
-        </div>
-        <form onSubmit={handleSubmit}>
-          {error && <div className={styles.error}>{error}</div>}
-          <div>
-            <label htmlFor="email">E-mail:</label>
-            <input
-              className={styles.label}
-              type="email"
-              id="email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              required
-            />
+      <main className={styles.body}>
+        <div className={styles.container}>
+          <div className={styles.imgLogin}>
+            <img src="/loginimg.svg" alt="loading ..." />
           </div>
-          <div>
-            <label htmlFor="password">Senha:</label>
-            <input
-              className={styles.label}
-              type="password"
-              id="password"
-              value={senha}
-              onChange={(e) => setPassword(e.target.value)}
-              required
-            />
-          </div>
+          <form onSubmit={handleSubmit}>
+            {error && <div className={styles.error}>{error}</div>}
+            <div>
+              <label htmlFor="email">E-mail:</label>
+              <input
+                className={styles.label}
+                type="email"
+                id="email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                required
+              />
+            </div>
+            <div>
+              <label htmlFor="password">Senha:</label>
+              <input
+                className={styles.label}
+                type="password"
+                id="password"
+                value={senha}
+                onChange={(e) => setPassword(e.target.value)}
+                required
+              />
+            </div>
 
-          <button type="submit">Entrar</button>
-        </form>
-        <div className={styles.forgotPassword}>
-          <Link
-            style={{ textDecoration: "none", color: "whitesmoke" }}
-            href="/forgotPassword"
-          >
-            <span>Esqueci minha senha</span>
-          </Link>
+            <button type="submit">Entrar</button>
+          </form>
+          <div className={styles.forgotPassword}>
+            <Link
+              style={{ textDecoration: "none", color: "whitesmoke" }}
+              href="/forgotPassword"
+            >
+              <span>Esqueci minha senha</span>
+            </Link>
+          </div>
         </div>
-      </div>
+      </main>
     </>
   );
 }

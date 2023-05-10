@@ -26,6 +26,9 @@ height: 40px;
 color: whitesmoke;
 
 border-radius: 8px;
+
+
+
 }
 
 .form button {
@@ -38,9 +41,14 @@ gap: 8px;
 background: #9E9E9E;
 border-radius: 90px;
 margin-top: 20px;
-
 }
 
-.inputCsv input{
-    
+.inputDescription{
+background: rgba(239, 239, 255, 0.15);
+border: 1px solid #353535;
+backdrop-filter: blur(5px);
+width: 300px;
+color: whitesmoke;
+border-radius: 8px;
+height: 150px !important; 
 }

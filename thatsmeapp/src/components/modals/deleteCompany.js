@@ -1,7 +1,6 @@
 import styles from "@/styles/deleteCompany.module.css";
 
 const ModalDeleteCompany = (props) => {
-  console.log(props.dataT);
   return (
     <div className={styles.modalBackground}>
       <div className={styles.modal}>

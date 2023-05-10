@@ -52,9 +52,8 @@ align-items: center;
 }
 .table th{
     padding: 1% 1% 1% 0%;
-    /* min-width: 100px;
-    max-width: 200px; */
-    width:250px;
+  
+    width:350px;
     word-wrap: break-word;
     
    
@@ -80,6 +79,7 @@ line-height: 19px;
     font-size: 16px;
     line-height: 19px;
     color: #636363;
+    max-width:340px;
 }
 
 .buttonContainer{

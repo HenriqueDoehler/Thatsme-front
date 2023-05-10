@@ -80,17 +80,6 @@ export default function Register() {
           disabled
         />
 
-        <label htmlFor="description">Descrição:</label>
-        <input
-          type="text"
-          id="description"
-          name="description"
-          placeholder="Descrição"
-          value={formState.description}
-          onChange={handleInputChange}
-          required
-        />
-
         <label htmlFor="">Data:</label>
         <input
           type="text"
@@ -124,6 +113,20 @@ export default function Register() {
           onChange={handleInputChange}
           required
         />
+
+        <label htmlFor="description">Descrição:</label>
+        <textarea
+          wrap="hard"
+          className={styles.inputDescription}
+          type="text"
+          id="description"
+          name="description"
+          placeholder="Descrição"
+          value={formState.description}
+          onChange={handleInputChange}
+          required
+        />
+        {errorMessage && <div className={styles.divError}>{errorMessage}</div>}
 
         <div>
           <button type="submit">Cadastrar</button>

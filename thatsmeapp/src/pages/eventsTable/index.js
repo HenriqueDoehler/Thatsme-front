@@ -75,6 +75,13 @@ export default function EventTable() {
   return (
     <>
       <div className={styles.container2}>
+        {showModalE && (
+          <ModalDeleteCompany
+            dataT={dataT}
+            setShowModal={setShowModalE}
+            handleDelete={() => deleteEvent(idToDelete)}
+          />
+        )}
         <div className={styles.searchContainer}>
           <input
             className={styles.Input}
@@ -123,7 +130,7 @@ export default function EventTable() {
                   <Link href={`/eventsPage?id=${event.id}`}>
                     <td>{event.name}</td>
                   </Link>
-                  <td>{event.description}</td>
+                  <td className={styles.tdDescription}>{event.description}</td>
                   <td>{new Date(event.data).toLocaleDateString()}</td>
                   <td>{event.address}</td>
                   <td>{event.time.substring(0, 5)}</td>
@@ -150,14 +157,6 @@ export default function EventTable() {
             </table>
           </div>
         ))}
-
-        {showModalE && (
-          <ModalDeleteCompany
-            dataT={dataT}
-            setShowModal={setShowModalE}
-            handleDelete={() => deleteEvent(idToDelete)}
-          />
-        )}
       </div>
 
       <div className={styles.buttonsC2}>

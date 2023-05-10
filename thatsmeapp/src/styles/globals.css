@@ -13,17 +13,20 @@
 
 html,
 body {
-
   overflow-x: hidden;
   overflow-y: hidden;
   overscroll-behavior: none;
   background-color: rgb(3, 3, 3);
   background-image: url('/background.svg');
+  background-repeat: no-repeat;
+  background-position: center;
   background-size: cover;
   color: whitesmoke;
+  height: 100%;
+  width: 100%;
 }
 
-@media screen and (max-width: 568px) {
+@media screen and (max-width: 560px) {
   html,
   body {
     background-image: url('/backM.png');
