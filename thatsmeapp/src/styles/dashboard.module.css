@@ -57,8 +57,6 @@
     text-shadow: 0px 1px 0px #810e05;
     background:linear-gradient(#cc7b00, #F39200);
     z-index: 100;
-
-    
 }
 .containerM{
     display: flex;
@@ -82,7 +80,7 @@
 }
 
 .buttonAdd{
-    font-size:10px;
+    font-size:13px;
     font-family:Arial;
     width:100px;
     border-width:1px;
@@ -97,4 +95,7 @@
     text-shadow:inset 0px 1px 0px #ffee66;
     background:linear-gradient(#ffec64, #ffab23);
 }
+.buttonAdd:hover {
+    background: linear-gradient(#ffab23, #ffec64);
+  }
 

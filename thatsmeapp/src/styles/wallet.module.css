@@ -112,7 +112,7 @@ border-radius: 90px;
 }
 
 .containerWallet{
-  width: 70vw;
+  width: 85vw;
   height: 70vh;
   margin-left: 300px;
   display: flex;
@@ -121,15 +121,11 @@ border-radius: 90px;
   flex-wrap: wrap;
   }
 
-  .sketchfab-embed-wrapper {
-    width: 25%; 
-    padding: 10px;
-    box-sizing: border-box;
-    
-  }
+ 
+
   .walletC{
     display: flex;
-    width: 70vw;
+    width: 80vw;
     height: 70vh;
     justify-content: space-evenly;
     flex-wrap: wrap;
@@ -188,4 +184,63 @@ border-radius: 90px;
   .jumpMan{
     margin-right: 5%;
   }
+
+.span:hover {
+  color: orange;
+  cursor: pointer;
+}
+
+
+
+
+  @media screen and (max-width: 930px) {
+.topMenu{
+  display: none;
+}
+.sideMenu{
+  display: flex;
+  width: 90vw;
+  height: 100px;
+  margin-left: 2%;
+  margin-top: 2%;
+  background: rgba(0, 0, 0, 0.5);
+  border: 1px solid #353535;
+  border-radius: 16px;
+  align-items: flex-start;
+  position: absolute;
+}
+
+.containerWallet{
+ 
+  margin-left: 0;
+
+  }
+
+  .leftButton{
+     position: absolute;
+     margin-left: 60%;
+     top: 0;
+     z-index: 100;
+     border-top-left-radius:0px;
+     border-top-right-radius:0px;
+     border-bottom-left-radius:18px;
+ 
+     
+ }
+
+ .jumpMan{
+  display: none;
+}
+
+.imgWallet{
+  width: 50%;
+  height: 50%;
+  
+  
+}
+.input{
+  width: 280px;
+}
+  }
+
 

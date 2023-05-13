@@ -1,6 +1,6 @@
-import { useEffect } from "react";
+import { useState, useEffect } from "react";
 import styles from "@/styles/dashboard.module.css";
-import ListaEmpresas from "@/components/listas/listCompany";
+import ListaHistory from "@/components/listas/listHistory";
 import PrivateRoute from "@/components/router/privateRouter";
 import { useRouter } from "next/router";
 import Link from "next/link";
@@ -35,16 +35,11 @@ function Dashboard() {
         <div className={styles.containerM}>
           <h1 className={styles.h1}>EMPRESAS CADASTRADAS</h1>
           <div className={styles.containerDash}>
-            <ListaEmpresas />
+            <ListaHistory />
           </div>
-          <div>
-            <Link href="/registerForm">
-              <button className={styles.buttonAdd}>Adicionar Empresa</button>
-            </Link>
-            <Link href="/history">
-              <button className={styles.buttonAdd}>Medalhas Resgatadas</button>
-            </Link>
-          </div>
+          <Link href="/dashboard">
+            <button className={styles.buttonAdd}>voltar</button>
+          </Link>
         </div>
       </div>
     </PrivateRoute>

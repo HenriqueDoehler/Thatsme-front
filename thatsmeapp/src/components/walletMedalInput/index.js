@@ -48,7 +48,7 @@ const InputMedal = () => {
     <>
       <div className={styles.container} style={{ overflow: "auto" }}>
         <div className={styles.sideMenu}>
-          <h1 className={styles.textLeft}>Bem Vindo a sua Carteira</h1>
+          <h1 className={styles.textLeft}>Bem Vindo</h1>
           <button onClick={handleLogout} className={styles.leftButton}>
             Sair
           </button>
@@ -62,6 +62,7 @@ const InputMedal = () => {
           <div className={styles.containerInput}>
             <form className={styles.form} onSubmit={handleEmailSubmit}>
               <img
+                className={styles.imgWallet}
                 src="/Mydigitalwallet.svg"
                 alt="right-image"
                 draggable="false"

@@ -1,0 +1,22 @@
+.container{
+    display: flex;
+}
+
+.containerSection {
+    height: 200vh;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto !important;
+    
+  }
+  
+  .section1 {
+    height: 50%;
+    /* background-color: #ccc; */
+  }
+  
+  .section2 {
+    height: 50%;
+    /* background-color: #eee; */
+  }
+  

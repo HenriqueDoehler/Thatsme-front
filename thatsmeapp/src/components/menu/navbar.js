@@ -42,10 +42,10 @@ const Navbar = () => {
         <Link style={{ textDecoration: "none" }} href="/" passHref>
           <span className={styles.span}>Home</span>
         </Link>
-        <Link style={{ textDecoration: "none" }} href="/about" passHref>
+        <Link style={{ textDecoration: "none" }} href="/suporte" passHref>
           <span className={styles.span}>FAQ & Suporte</span>
         </Link>
-        <Link style={{ textDecoration: "none" }} href="/contact" passHref>
+        <Link style={{ textDecoration: "none" }} href="/comoFunciona" passHref>
           <span className={styles.span}>Como funciona</span>
         </Link>
       </div>

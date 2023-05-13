@@ -14,8 +14,7 @@
 html,
 body {
   overflow-x: hidden;
-  overflow-y: hidden;
-  overscroll-behavior: none;
+  /* overscroll-behavior: none; */
   background-color: rgb(3, 3, 3);
   background-image: url('/background.svg');
   background-repeat: no-repeat;
@@ -37,4 +36,16 @@ body {
 	--clr-neon: rgb(238, 139, 40);
 	--clr-bg: rgba(1, 1, 1, 1);
 	--clr-white: rgba(255, 255, 255, 1);
+
+
+  ::-webkit-scrollbar {
+    width: 5px; 
+    height: 5px; 
+    background-color: transparent; 
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background-color: rgba(238, 237, 237, 0.268); /* torna a barra de rolagem preta */
+    
+  }
 }

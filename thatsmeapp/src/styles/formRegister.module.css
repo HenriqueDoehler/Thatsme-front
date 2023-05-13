@@ -32,16 +32,24 @@ border-radius: 8px;
 }
 
 .form button {
-display: flex;
-flex-direction: row;
-justify-content: center;
-align-items: center;
-padding: 8px 16px;
-gap: 8px;
-background: #9E9E9E;
-border-radius: 90px;
-margin-top: 20px;
+    font-size:13px;
+    font-family:Arial;
+    width:100px;
+    border-width:1px;
+    color:#14396a;
+    border-color:#333333;
+    font-weight:bold;
+    border-top-left-radius:6px;
+    border-top-right-radius:6px;
+    border-bottom-left-radius:6px;
+    border-bottom-right-radius:6px;
+    box-shadow:inset 0px 1px 0px 0px #fff6af;
+    text-shadow:inset 0px 1px 0px #ffee66;
+    background:linear-gradient(#ffec64, #ffab23);
 }
+.form button:hover {
+    background: linear-gradient(#ffab23, #ffec64);
+  }
 
 .inputDescription{
 background: rgba(239, 239, 255, 0.15);
