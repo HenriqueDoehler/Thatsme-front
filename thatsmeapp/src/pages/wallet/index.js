@@ -168,6 +168,24 @@ function Wallet() {
               </div>
             </div>
           </div>
+          <div className={styles.formAddMedal1}>
+            <form onSubmit={handleFormSubmit}>
+              <input
+                placeholder="CÓDIGO"
+                type="text"
+                maxLength={5}
+                id="code"
+                name="code"
+                pattern="[0-9]{5}"
+                value={formState.code}
+                onChange={handleInputChange}
+                required
+              />
+
+              <button onClick={handleFormSubmit}>Resgatar</button>
+            </form>
+            {error && <div className={styles.error}>{error}</div>}
+          </div>
         </div>
       ) : (
         <InputMedal />

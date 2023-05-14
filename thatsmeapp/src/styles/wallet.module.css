@@ -229,9 +229,9 @@ margin-top: 20px;
 }
  .formAddMedal button{
 
-  /* margin-top: 3.5px; */
+ 
   align-items: center;
-  /* padding: 8px 16px; */
+  
   border: 1px solid #353535;
 
   width: 90px;
@@ -250,6 +250,12 @@ margin-top: 20px;
 .nameMobile{
   display: none;
 }
+
+.formAddMedal1{
+ 
+ display: none;
+  
+ }
 
 
   @media screen and (max-width: 930px) {
@@ -313,10 +319,44 @@ margin-top: 20px;
 
 .formAddMedal{
  
-  top: 9%;
-  left: 20%;
+ display: none;
  
 }
+.formAddMedal1{
+ 
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 10px;
+  
+ }
+
+ .formAddMedal1 input{
+  padding: 8px 8px 8px 24px;
+  gap: 8px;
+  width: 150px;
+  height: 42px;
+   background: rgba(239, 239, 255, 0.07);
+   border: 1px solid #353535;
+   border-radius: 90px;
+   color: whitesmoke;
+ }
+ .formAddMedal1 button{
+ 
+  align-items: center;
+  
+  border: 1px solid #353535;
+
+  width: 90px;
+  height: 36px;
+
+  background: #9E9E9E;
+  border-radius: 60px;
+
+   background: #9E9E9E;
+   color: whitesmoke;
+ }
 
   }
 
