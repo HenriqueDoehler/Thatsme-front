@@ -5,20 +5,24 @@
     display: flex;
     flex-direction: column;
    align-items:flex-start;
+   font-family: 'futur', sans-serif;
+   text-shadow: 1px -1px 0px #F39200;
 }
 .sideMenu{
     width: 15%;
-    height: 90vh;
-    height: 90svh;
+    height: 80vh;
+    height: 80svh;
     display: flex;
     margin-left: 2%;
-    margin-top: 2%;
+    margin-top:8%;
     background: rgba(0, 0, 0, 0.5);
     border: 1px solid #353535;
     border-radius: 16px;
     display: flex;
-    align-items: flex-start;
+    align-items: center;
     position: absolute;
+    flex-wrap: wrap;
+    /* overflow-wrap: break-word; */
   }
 .topMenu{
     width: 78%;
@@ -36,9 +40,11 @@
 }
 .textLeft{
    padding: 10px ;
-   line-height: 3rem; 
-   font-size: 18px;
-   position: relative;   
+   line-height: 2rem; 
+   font-size: 16px;
+   position: relative;  
+   font-family: 'futur', sans-serif;
+   text-shadow: 1px -1px 0px #F39200;
 }
 .leftButton{
   
@@ -100,6 +106,8 @@ border-radius: 90px;
   display: flex;
   justify-content: center;
   align-items: center;
+
+  margin-top: 10%;
   }
   
   
@@ -190,16 +198,73 @@ border-radius: 90px;
   cursor: pointer;
 }
 
+.sketchfabembedwrapper{
+  border: 1.14649px solid #353535;
+border-radius: 6.11463px;
+display: flex;
+align-items: center;
+justify-content: center;
+flex-direction: column;
+width: 250px;
+height: 320px;
+padding: 20px;
+margin-top: 20px;
+}
 
+.formAddMedal{
+  position:absolute;
+  top: 15%;
+  left: 50%;
+ 
+}
+.formAddMedal input{
+  padding: 8px 8px 8px 24px;
+  gap: 8px;
+  width: 150px;
+  height: 42px;
+   background: rgba(239, 239, 255, 0.07);
+   border: 1px solid #353535;
+   border-radius: 90px;
+   color: whitesmoke;
+}
+ .formAddMedal button{
+
+  /* margin-top: 3.5px; */
+  align-items: center;
+  /* padding: 8px 16px; */
+  border: 1px solid #353535;
+
+  width: 90px;
+  height: 36px;
+
+  background: #9E9E9E;
+  border-radius: 60px;
+
+   background: #9E9E9E;
+   color: whitesmoke;
+
+ }
+ .formAddMedal button:hover{
+  background: linear-gradient(to right, #D4942B 0%, #CC392C 100%);
+}
+.nameMobile{
+  display: none;
+}
 
 
   @media screen and (max-width: 930px) {
+    .nameMobile{
+      display: flex;
+      margin-top: 75px;
+      margin-bottom: -150px;
+      margin-left: 10px;
+    }
 .topMenu{
   display: none;
 }
 .sideMenu{
   display: flex;
-  width: 90vw;
+  width: 95vw;
   height: 100px;
   margin-left: 2%;
   margin-top: 2%;
@@ -208,6 +273,9 @@ border-radius: 90px;
   border-radius: 16px;
   align-items: flex-start;
   position: absolute;
+  flex-wrap: wrap;
+  overflow-wrap: break-word;
+  display: none;
 }
 
 .containerWallet{
@@ -241,6 +309,22 @@ border-radius: 90px;
 .input{
   width: 280px;
 }
+
+
+.formAddMedal{
+ 
+  top: 92%;
+  left: 20%;
+ 
+}
+.formAddMedal input{
+
+}
+ .formAddMedal button{
+
+ 
+
+ }
   }
 
 

@@ -24,7 +24,7 @@ export default async function sendEmailN(req, res) {
   transporter.sendMail(
     {
       from: process.env.EMAIL_USER,
-      to: "henriquedoehler1@gmail.com",
+      to: "suporte@thatsme.site",
       subject: "Contato do site Thats Me",
       text: `${req.body.email} escreveu: ${req.body.message}`,
     },

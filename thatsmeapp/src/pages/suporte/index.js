@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import styles from "@/styles/formMail.module.css";
 import Navbar from "@/components/menu/navbar";
+import SimpleAccordion from "@/components/accordion";
 
 const Contact = () => {
   const [email, setEmail] = useState("");
@@ -10,16 +11,34 @@ const Contact = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    fetch("/api/mail", {
-      method: "POST",
-      headers: {
-        "content-type": "application/json",
-      },
-      body: JSON.stringify({
-        email,
-        message,
-      }),
-    });
+    try {
+      const response = await fetch("/api/mail", {
+        method: "POST",
+        headers: {
+          "content-type": "application/json",
+        },
+        body: JSON.stringify({
+          email,
+          message,
+        }),
+      });
+      if (response.ok) {
+        setEmail("");
+        setMessage("");
+        setSuccessMessage("E-mail enviado com sucesso!");
+        setErrorMessage("");
+      } else {
+        setErrorMessage(
+          "Não foi possível enviar o e-mail. Por favor, tente novamente mais tarde."
+        );
+        setSuccessMessage("");
+      }
+    } catch (error) {
+      setErrorMessage(
+        "Ocorreu um erro ao enviar o e-mail. Por favor, tente novamente mais tarde."
+      );
+      setSuccessMessage("");
+    }
   };
 
   return (
@@ -28,13 +47,23 @@ const Contact = () => {
 
       <div className={styles.containerSection}>
         <div className={styles.section1}>
-          <h1>Seção 1</h1>
-          <p>Conteúdo da seção 1</p>
+          <div className={styles.containerAccordion}>
+            <div className={styles.divAcc}>
+              <img src="/faq.svg" />
+              <SimpleAccordion />
+              <img src="/arrowDown.svg" />
+            </div>
+          </div>
+          <div className={styles.medalSvg}>
+            <img src="/medalhacentral.svg" />
+          </div>
         </div>
+
         <div className={styles.section2}>
-          <div className={styles.container}>
+          <div className={styles.containerFormMail}>
+            <img src="/suporte.svg" alt="" />
             <form onSubmit={handleSubmit}>
-              <label htmlFor="email">Email:</label>
+              <label htmlFor="email"> Seu email:</label>
               <input
                 type="email"
                 id="email"
@@ -61,6 +90,9 @@ const Contact = () => {
               <button type="submit">Enviar</button>
             </form>
           </div>
+        </div>
+        <div className={styles.chair}>
+          <img src="/chairMan.svg" />
         </div>
       </div>
     </>

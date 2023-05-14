@@ -35,7 +35,10 @@ export default function Home() {
     <>
       <Head>
         <title>Thats Me</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta
+          name="viewport"
+          content="width=device-width, initial-scale=1, maximun-scale=1"
+        />
         <meta name="description" content="Thats Me APP" />
       </Head>
       <Navbar />

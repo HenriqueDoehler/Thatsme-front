@@ -14,7 +14,6 @@
 html,
 body {
   overflow-x: hidden;
-  /* overscroll-behavior: none; */
   background-color: rgb(3, 3, 3);
   background-image: url('/background.svg');
   background-repeat: no-repeat;
@@ -48,4 +47,8 @@ body {
     background-color: rgba(238, 237, 237, 0.268); /* torna a barra de rolagem preta */
     
   }
+}
+@font-face {
+  font-family: 'MinhaFonte';
+  src: url('/fonts/futur.ttf') format('truetype');
 }

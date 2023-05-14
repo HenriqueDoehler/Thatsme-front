@@ -1,6 +1,7 @@
 import InputMedal from "@/components/walletMedalInput";
 import styles from "@/styles/wallet.module.css";
 import Modal from "@/components/modals/modalsFrame";
+import Navbar from "@/components/menu/navbar";
 
 import { useState, useEffect } from "react";
 
@@ -8,6 +9,8 @@ import { useRouter } from "next/router";
 
 function Wallet() {
   const router = useRouter();
+  const [error, setError] = useState("");
+  const [formState, setFormState] = useState({ code: "" });
   const [showModal, setShowModal] = useState(false);
   const [codModels, setCodModels] = useState([]);
   const [nameUser, setNameUser] = useState([]);
@@ -19,6 +22,34 @@ function Wallet() {
     description: "",
     nameUser: "",
   });
+  const handleInputChange = (event) => {
+    const { name, value } = event.target;
+    setFormState((prevState) => ({ ...prevState, [name]: value }));
+  };
+
+  const handleFormSubmit = async (event) => {
+    event.preventDefault();
+    const { code } = formState;
+    const email = localStorage.getItem("email");
+
+    try {
+      const response = await fetch(`https://api.thatsme.site/addMedal`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ email, short_code: code }),
+      });
+
+      if (response.status === 200) {
+        window.location.reload();
+      } else {
+        setError("código inválido");
+      }
+    } catch (error) {
+      console.error(error);
+    }
+  };
 
   const handleLogout = () => {
     localStorage.removeItem("email");
@@ -64,19 +95,38 @@ function Wallet() {
       />
       {codModels.some((codModel) => codModel !== null) ? (
         <div className={styles.container} style={{ overflow: "auto" }}>
-          <div className={styles.topMenu}>
-            <img src="/logoDash.svg" alt="Logo" />
-          </div>
+          <Navbar />
           <div className={styles.sideMenu}>
             <h1 className={styles.textLeft}>
-              Bem Vindo <br />
+              Olá, <br />
               {nameUser}
             </h1>
             <button onClick={handleLogout} className={styles.leftButton}>
               Sair
             </button>
           </div>
+          <h1 className={styles.nameMobile}>
+            Olá, <br />
+            {nameUser}
+          </h1>
+          <div className={styles.formAddMedal}>
+            <form onSubmit={handleFormSubmit}>
+              <input
+                placeholder="CÓDIGO"
+                type="text"
+                maxLength={5}
+                id="code"
+                name="code"
+                pattern="[0-9]{5}"
+                value={formState.code}
+                onChange={handleInputChange}
+                required
+              />
 
+              <button onClick={handleFormSubmit}>Resgatar</button>
+            </form>
+            {error && <div className={styles.error}>{error}</div>}
+          </div>
           <div className={styles.canvas}>
             <div
               className={styles.containerWallet}
@@ -102,7 +152,7 @@ function Wallet() {
                           web-share
                           width="240"
                           height="280"
-                          src={`https://sketchfab.com/models/${codModel}/embed?autostart=1&annotation=1&annotation_cycle=1&transparent=1&ui_animations=0&ui_infos=0&ui_stop=0&ui_inspector=0&ui_watermark_link=0&ui_watermark=0&ui_ar=0&ui_help=0&ui_settings=0&ui_vr=0&ui_annotations=0`}
+                          src={`https://sketchfab.com/models/${codModel}/embed?autostart=1&preload=1&transparent=1&ui_animations=0&ui_infos=0&ui_stop=0&ui_inspector=0&ui_watermark_link=0&ui_watermark=0&ui_ar=0&ui_help=0&ui_settings=0&ui_vr=0&ui_fullscreen=0&ui_annotations=0&dnt=1`}
                         ></iframe>
                         <div className={styles.medalDescriptions}>
                           <span

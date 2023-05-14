@@ -1,5 +1,64 @@
-.container{
+.containerFormMail{
     display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    /* background-color: red; */
+    width: 40%;
+    height: 30%;
+
+}
+.containerFormMail form {
+  display: flex;
+  flex-direction: column;
+
+}
+
+.containerFormMail input{
+  width: 470px;
+  height: 52px;
+  left: 485px;
+  top: 1072.07px;
+  
+  background: rgba(239, 239, 255, 0.07);
+  border: 1px solid #353535;
+  backdrop-filter: blur(5px);
+  /* Note: backdrop-filter has minimal browser support */
+  
+  border-radius: 8px;
+  color: whitesmoke;
+  padding: 10px;
+}
+
+
+.containerFormMail textarea{
+  width: 470px;
+  height: 52px;
+  left: 485px;
+  top: 1072.07px;
+  
+  background: rgba(239, 239, 255, 0.07);
+  border: 1px solid #353535;
+  backdrop-filter: blur(5px);
+  /* Note: backdrop-filter has minimal browser support */
+  
+  border-radius: 8px;
+  color: whitesmoke;
+  padding: 10px;
+  height: 200px;
+}
+
+.containerFormMail button{
+  padding: 8px 16px;
+
+ margin-top: 20px;
+  width: 151px;
+  height: 36px;
+  left: 804px;
+  top: 1491.52px;
+  
+  background: #9E9E9E;
+  border-radius: 90px;
 }
 
 .containerSection {
@@ -12,11 +71,75 @@
   
   .section1 {
     height: 50%;
-    /* background-color: #ccc; */
+   
   }
   
   .section2 {
-    height: 50%;
-    /* background-color: #eee; */
+    height: 60%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    
   }
   
+  .containerAccordion{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    width: 100%;
+    height: 100%;
+  }
+  .divAcc{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 70%;
+    
+  }
+  .divAcc img{
+    margin-bottom: 20px;
+    margin-top: 5px;
+   
+  }
+  .medalSvg img{
+   margin-top: -100%;
+    
+  }
+
+  
+  .medalSvg {
+  width: 200px;
+  height: 200px;
+  
+
+   
+    
+  }
+
+  .chair img{
+    margin-top: -100%;
+    margin-left: 80%;
+     
+   }
+
+   @media screen and (max-width: 770px) {
+    .containerFormMail input{
+      width: 300px;
+      height: 52px;
+    
+    }
+    
+    
+    .containerFormMail textarea{
+      width: 300px;
+      height: 202px;
+    
+    }
+    
+
+   }
+
+ 
