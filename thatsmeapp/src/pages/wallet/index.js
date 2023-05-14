@@ -2,6 +2,7 @@ import InputMedal from "@/components/walletMedalInput";
 import styles from "@/styles/wallet.module.css";
 import Modal from "@/components/modals/modalsFrame";
 import Navbar from "@/components/menu/navbar";
+import Head from "next/head";
 
 import { useState, useEffect } from "react";
 
