@@ -256,7 +256,7 @@ margin-top: 20px;
     .nameMobile{
       display: flex;
       margin-top: 75px;
-      margin-bottom: -150px;
+      margin-bottom: -10px;
       margin-left: 10px;
     }
 .topMenu{
@@ -317,14 +317,7 @@ margin-top: 20px;
   left: 20%;
  
 }
-.formAddMedal input{
 
-}
- .formAddMedal button{
-
- 
-
- }
   }
 
 
