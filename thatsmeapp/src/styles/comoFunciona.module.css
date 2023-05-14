@@ -2,8 +2,9 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-direction: column;
     width: 100vw;
-    height: 100vh;
+    height: 120vh;
 }
 .divC{
     display: flex;
@@ -11,20 +12,24 @@
     justify-content: center;
     flex-direction: column;
 }
+.ComoFuncionaImg {
+    margin-top: 15%;
+    width: 15%;
+  
+}
 .containerHow{
     
-position: absolute;
+
 padding: 5px;
 width: 272.53px;
 height: 132.9px;
-left: 10%;
-top:30%;
+
 background: rgba(0, 0, 0, 0.3);
 border: 1px solid #444444;
 backdrop-filter: blur(2px);
 
 border-radius: 8px;
-margin: 20px;
+margin: 50px;
 }
 .containerHow img{
     position: absolute;
@@ -48,41 +53,8 @@ line-height: 13px;
 
 }
 
-.containerHow2{
-    position: absolute;
-    padding: 5px;
-width: 272.53px;
-height: 132.9px;
-left: 30%;
-top: 70%;
-background: rgba(0, 0, 0, 0.3);
-border: 1px solid #444444;
-backdrop-filter: blur(2px);
-border-radius: 8px;
-}
-.containerHow2 img{
-    position: absolute;
-    top: -60px;
-    left: -80px;
-}
 
-.containerHow3{
-    position: absolute;
-    padding: 5px;
-width: 272.53px;
-height: 132.9px;
-left: 70%;
-top: 40%;
-background: rgba(0, 0, 0, 0.3);
-border: 1px solid #444444;
-backdrop-filter: blur(2px);
-border-radius: 8px;
-}
-.containerHow3 img{
-    position: absolute;
-    top: -60px;
-    left: -80px;
-}
+
 
 .pezin{
     display: flex;
@@ -150,46 +122,5 @@ border-radius: 8px;
     line-height: 13px;
     
     }
-    
-    .containerHow2{
-        position: relative;
-        padding: 4px;
-      
-        height: 100.9px;
-        left: 0%;
-        
-        background: rgba(0, 0, 0, 0.3);
-        border: 1px solid #444444;
-        backdrop-filter: blur(2px);
-        
-        border-radius: 8px;
-        margin: 20px;
-    }
-    .containerHow2 img{
-        position: absolute;
-        top: -50px;
-        left: -20px;
-        width: 20%;
-    }
-    
-    .containerHow3{
-        position: relative;
-        padding: 4px;
-     
-        height: 100.9px;
-        left: 0%;
-        
-        background: rgba(0, 0, 0, 0.3);
-        border: 1px solid #444444;
-        backdrop-filter: blur(2px);
-        
-        border-radius: 8px;
-        margin: 20px;
-    }
-    .containerHow3 img{
-        position: absolute;
-        top: -50px;
-        left: -20px;
-        width: 20%;
-    }
+   
   }

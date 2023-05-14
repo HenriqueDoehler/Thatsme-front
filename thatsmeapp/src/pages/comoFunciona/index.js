@@ -6,8 +6,8 @@ export default function howWorks() {
     <>
       <Navbar />
       <main className={styles.main}>
+        <img className={styles.ComoFuncionaImg} src="/howWorks.svg" alt="" />
         <div className={styles.divC}>
-          <img src="/howWorks.svg" alt="" />
           <div className={styles.containerHow}>
             <img className={styles.imgText} src="/icon01.svg" alt="" />
             <h1>
@@ -20,7 +20,7 @@ export default function howWorks() {
             </p>
           </div>
 
-          <div className={styles.containerHow2}>
+          <div className={styles.containerHow}>
             <img src="/icon02.svg" alt="" />
             <h1>
               Fique atento às instruções do evento. Você receberá um Short Code
@@ -31,7 +31,7 @@ export default function howWorks() {
               seu e-mail registrado no evento.
             </p>
           </div>
-          <div className={styles.containerHow3}>
+          <div className={styles.containerHow}>
             <img src="/icon03.svg" alt="" />
             <h1>
               Na sua carteira digital você tem acesso a todas suas medalhas, e
