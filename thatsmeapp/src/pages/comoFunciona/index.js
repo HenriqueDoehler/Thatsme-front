@@ -8,9 +8,9 @@ export default function howWorks() {
       <Navbar />
       <main className={styles.main}>
         <img className={styles.ComoFuncionaImg} src="/howWorks.svg" alt="" />
+        <img className={styles.imgText} src="/icon01.svg" alt="" />
         <div className={styles.divC}>
           <div className={styles.containerHow}>
-            <img className={styles.imgText} src="/icon01.png" alt="" />
             <h1>
               Participe de eventos organizados por nossas empresas parceiras!
             </h1>
