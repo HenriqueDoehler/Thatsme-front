@@ -53,9 +53,6 @@ line-height: 13px;
 
 }
 
-
-
-
 .pezin{
     display: flex;
     align-items: center;
@@ -121,6 +118,11 @@ line-height: 13px;
     font-size: 9px;
     line-height: 13px;
     
+    }
+    .ComoFuncionaImg {
+        margin-top: 15%;
+        width: 30%;
+      
     }
    
   }

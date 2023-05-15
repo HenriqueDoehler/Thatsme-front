@@ -51,14 +51,13 @@ const Contact = () => {
             <div className={styles.divAcc}>
               <img src="/faq.svg" />
               <SimpleAccordion />
-              <img src="/arrowDown.svg" />
             </div>
           </div>
           <div className={styles.medalSvg}>
             <img src="/medalhacentral.svg" />
           </div>
         </div>
-
+        <img className={styles.arrowImg} src="/arrowDown.svg" />
         <div className={styles.section2}>
           <div className={styles.containerFormMail}>
             <img src="/suporte.svg" alt="" />
