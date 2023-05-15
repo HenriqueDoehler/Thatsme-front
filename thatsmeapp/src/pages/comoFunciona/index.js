@@ -10,7 +10,7 @@ export default function howWorks() {
         <img className={styles.ComoFuncionaImg} src="/howWorks.svg" alt="" />
         <div className={styles.divC}>
           <div className={styles.containerHow}>
-            <img className={styles.imgText} src="/icon01.svg" alt="" />
+            <img className={styles.imgText} src="/icon01.png" alt="" />
             <h1>
               Participe de eventos organizados por nossas empresas parceiras!
             </h1>
@@ -22,7 +22,7 @@ export default function howWorks() {
           </div>
 
           <div className={styles.containerHow}>
-            <img src="/icon02.svg" alt="" href="/icon02.svg" />
+            <img src="/icon02.svg" alt="" href="/icon02.png" />
             <h1>
               Fique atento às instruções do evento. Você receberá um Short Code
               para resgatar sua medalha digital.
@@ -33,7 +33,7 @@ export default function howWorks() {
             </p>
           </div>
           <div className={styles.containerHow}>
-            <img src="/icon03.svg" alt="" />
+            <img src="/icon03.png" alt="" />
             <h1>
               Na sua carteira digital você tem acesso a todas suas medalhas, e
               essa conquista está eternizada em nossa rede.
