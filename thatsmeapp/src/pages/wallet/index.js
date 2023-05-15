@@ -110,7 +110,7 @@ function Wallet() {
         <div className={styles.container} style={{ overflow: "auto" }}>
           <Navbar />
           <div className={styles.sideMenu}>
-            <h1 className={styles.textLeft}>
+            <h1 style={{ fontSize: 26 }} className={styles.textLeft}>
               Olá, <br />
               {nameUser}
             </h1>
