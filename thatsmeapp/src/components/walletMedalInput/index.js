@@ -6,6 +6,7 @@ const InputMedal = () => {
   const [code, setCode] = useState("");
   const [error, setError] = useState("");
   const [email, setEmail] = useState("");
+  const [buttonDisabled, setButtonDisabled] = useState(false);
 
   const router = useRouter();
 
@@ -38,6 +39,7 @@ const InputMedal = () => {
         router.reload("/wallet");
       } else {
         setError("Codigo Incorreto.");
+        setButtonDisabled(true);
       }
     } catch (err) {
       setError("error");
@@ -48,7 +50,9 @@ const InputMedal = () => {
     <>
       <div className={styles.container} style={{ overflow: "auto" }}>
         <div className={styles.sideMenu}>
-          <h1 className={styles.textLeft}>Bem Vindo</h1>
+          <h1 style={{ fontSize: "20px" }} className={styles.textLeft}>
+            Bem-Vindo
+          </h1>
           <button onClick={handleLogout} className={styles.leftButton}>
             Sair
           </button>
@@ -78,13 +82,20 @@ const InputMedal = () => {
                   id="email"
                   placeholder="Codigo"
                   value={code}
-                  onChange={(e) => setCode(e.target.value)}
+                  onChange={(e) => {
+                    setCode(e.target.value);
+                    setButtonDisabled(false);
+                  }}
                   required
                 />
                 {error && <div className={styles.error}>{error}</div>}
               </div>
 
-              <button className={styles.button} type="submit">
+              <button
+                className={styles.button}
+                type="submit"
+                disabled={buttonDisabled}
+              >
                 Resgatar
               </button>
             </form>

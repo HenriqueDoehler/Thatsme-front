@@ -33,7 +33,7 @@ function Dashboard() {
           <img src="/logoDash.svg" alt="Logo" />
         </div>
         <div className={styles.containerM}>
-          <h1 className={styles.h1}>EMPRESAS CADASTRADAS</h1>
+          <h1 className={styles.h1}>Medalhas Resgatadas</h1>
           <div className={styles.containerDash}>
             <ListaHistory />
           </div>

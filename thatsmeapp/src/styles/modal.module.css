@@ -32,6 +32,7 @@
     font-size: 20px;
     text-transform: uppercase;
     height: 25px;
+    margin-top: 10px;
 
 }
 .modal h2{
@@ -61,6 +62,7 @@
 
    background: #9E9E9E;
    color: whitesmoke;
+   margin-top: 10px;
        
 }
 .modal button:hover{

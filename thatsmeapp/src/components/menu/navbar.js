@@ -27,7 +27,6 @@ const Navbar = () => {
             src="/logo3.svg"
             alt="Logo"
           />
-
           <img className={styles.sig} src="/asFundo.svg" alt="Logo" />
         </Link>
       </div>

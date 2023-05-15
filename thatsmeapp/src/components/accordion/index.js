@@ -98,8 +98,9 @@ export default function SimpleAccordion() {
         >
           <Typography sx={{ fontFamily: "inter" }}>
             Entre em contato com nosso suporte! Faremos de tudo para eternizar
-            sua conquista.Entre em contato através do email
-            suporte@thatsme.site.
+            sua conquista. Entre em contato através do email
+            suporte@thatsme.site ou deixe sua mensagem na caixinha de suporte
+            abaixo.
           </Typography>
         </AccordionDetails>
       </Accordion>

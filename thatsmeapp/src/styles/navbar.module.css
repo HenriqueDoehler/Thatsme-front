@@ -10,16 +10,20 @@
     z-index: 100;
 }
 .logo {
-    display: inline-block;
-    margin-right: auto;
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ flex-direction: row;
+
   }
   .logoImg {
-    width: 2.5rem;
-    padding-top: 20px;
-    padding-left: 10px;
+    width: 70%;
+    padding: 20px;
+    margin-right: -100px;
+   
   }
   .sig{
-    padding-left: 10px;
+    padding: 20px;
   }
  .menu  {
     display: none;
@@ -79,7 +83,7 @@
       display: none;
                 
     }
-    .open {
+    .open { 
       display: flex;
       position: absolute;
       flex-direction: column;

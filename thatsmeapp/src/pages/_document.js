@@ -4,12 +4,12 @@ export default function Document() {
   return (
     <Html lang="en">
       <Head>
-        <meta
-          name="viewport"
-          content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
-        />
-        <meta name="description" content="Thats Me APP" />
-        <title>Thats Me</title>
+        <link rel="icon" href="/favicon.ico" />
+        <link
+          rel="apple-touch-icon"
+          sizes="180x180"
+          href="/phoneIcon.png"
+        ></link>
       </Head>
       <body>
         <Main />

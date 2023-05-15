@@ -68,9 +68,9 @@ function ListaHistory() {
         </div>
 
         {history.length > 0 ? (
-          <div className={styles.table}>
-            {filteredCode.map((history) => (
-              <table className={styles.table2} key={history.id}>
+          <div className={styles.table} key={history.id}>
+            {filteredCode.map((history, index) => (
+              <table className={styles.table2} key={index}>
                 <thead>
                   <tr>
                     <th className={styles.th}>
@@ -132,7 +132,7 @@ function ListaHistory() {
             ))}
           </div>
         ) : (
-          <span>Carregando..s.</span>
+          <span>Carregando...</span>
         )}
       </div>
     </>

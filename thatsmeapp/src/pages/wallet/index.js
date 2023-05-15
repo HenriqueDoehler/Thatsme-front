@@ -16,6 +16,7 @@ function Wallet() {
   const [codModels, setCodModels] = useState([]);
   const [nameUser, setNameUser] = useState([]);
   const [eventName, setEventName] = useState([]);
+  const [buttonDisabled, setButtonDisabled] = useState(false);
   const [description, setDescription] = useState([]);
   const [modalData, setModalData] = useState({
     codModel: "",
@@ -26,6 +27,8 @@ function Wallet() {
   const handleInputChange = (event) => {
     const { name, value } = event.target;
     setFormState((prevState) => ({ ...prevState, [name]: value }));
+    setError("");
+    setButtonDisabled(false);
   };
 
   const handleFormSubmit = async (event) => {
@@ -46,6 +49,7 @@ function Wallet() {
         window.location.reload();
       } else {
         setError("código inválido");
+        setButtonDisabled(true);
       }
     } catch (error) {
       console.error(error);
@@ -191,7 +195,13 @@ function Wallet() {
                 required
               />
 
-              <button onClick={handleFormSubmit}>Resgatar</button>
+              <button
+                type="submit"
+                disabled={buttonDisabled}
+                onClick={handleFormSubmit}
+              >
+                Resgatar
+              </button>
             </form>
             {error && <div className={styles.error}>{error}</div>}
           </div>
