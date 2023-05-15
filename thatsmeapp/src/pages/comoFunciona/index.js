@@ -22,7 +22,13 @@ export default function howWorks() {
           </div>
 
           <div className={styles.containerHow}>
-            <Image src="/icon02.svg" alt="icon" href="/icon02.png" />
+            <Image
+              src="/icon02.svg"
+              alt="icon"
+              href="/icon02.png"
+              width={50}
+              height={50}
+            />
             <h1>
               Fique atento às instruções do evento. Você receberá um Short Code
               para resgatar sua medalha digital.
