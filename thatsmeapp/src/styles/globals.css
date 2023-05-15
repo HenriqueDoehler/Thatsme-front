@@ -15,11 +15,13 @@ html,
 body {
   overflow-x: hidden;
   background-color: rgb(3, 3, 3);
-  /* -webkit-background-image: url('/background.svg'); */
   background-image: url('/background.png');
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
+  -o-background-size: cover;
+  -moz-background-size: cover;
+  -webkit-background-size: cover;
   color: whitesmoke;
   height: 100%;
   width: 100%;
