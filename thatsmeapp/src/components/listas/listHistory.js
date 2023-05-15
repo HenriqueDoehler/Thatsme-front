@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import styles from "@/styles/list.module.css";
+import Image from "/next/image";
 
 function ListaHistory() {
   const [history, setHistory] = useState([]);
@@ -74,15 +75,15 @@ function ListaHistory() {
                 <thead>
                   <tr>
                     <th className={styles.th}>
-                      <img src="/emailIcon.svg" alt="" />
+                      <Image src="/emailIcon.svg" alt="" />
                       Email
                     </th>
                     <th className={styles.th}>
-                      <img src="/emailIcon.svg" alt="" />
+                      <Image src="/emailIcon.svg" alt="" />
                       Short Code
                     </th>
                     <th className={styles.th}>
-                      <img src="/dateIcon.svg" alt="" />
+                      <Image src="/dateIcon.svg" alt="" />
                       Data do resgate
                     </th>
                   </tr>
