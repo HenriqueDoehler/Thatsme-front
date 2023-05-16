@@ -71,25 +71,25 @@ export default function EventTable() {
   };
 
   useEffect(() => {
-    async function fetchEventsUsers() {
-      try {
-        const token = localStorage.getItem("token");
-        const response = await fetch(`https://api.thatsme.site/eventsUsers`, {
-          headers: {
-            methoded: "GET",
-            Authorization: `Bearer ${token}`,
-          },
-        });
-        if (!response.ok) {
-          throw new Error(`Request failed with status ${response.status}`);
-        }
-        const data = await response.json();
-        const eventsUsers = data.filter((user) => user.event_id === eventId);
-        setEventsUsers(eventsUsers);
-      } catch (error) {
-        console.error(error);
-      }
-    }
+    // async function fetchEventsUsers() {
+    //   try {
+    //     const token = localStorage.getItem("token");
+    //     const response = await fetch(`https://api.thatsme.site/eventsUsers`, {
+    //       headers: {
+    //         methoded: "GET",
+    //         Authorization: `Bearer ${token}`,
+    //       },
+    //     });
+    //     if (!response.ok) {
+    //       throw new Error(`Request failed with status ${response.status}`);
+    //     }
+    //     const data = await response.json();
+    //     const eventsUsers = data.filter((user) => user.event_id === eventId);
+    //     setEventsUsers(eventsUsers);
+    //   } catch (error) {
+    //     console.error(error);
+    //   }
+    // }
 
     async function fetchEventsMedals() {
       try {
@@ -112,8 +112,31 @@ export default function EventTable() {
       }
     }
 
-    fetchEventsUsers();
+    // fetchEventsUsers();
     fetchEventsMedals();
+  }, [eventId]);
+
+  useEffect(() => {
+    async function fetchEventsUsers() {
+      try {
+        const token = localStorage.getItem("token");
+        const response = await fetch(`https://api.thatsme.site/eventsUsers`, {
+          headers: {
+            methoded: "GET",
+            Authorization: `Bearer ${token}`,
+          },
+        });
+        if (!response.ok) {
+          throw new Error(`Request failed with status ${response.status}`);
+        }
+        const data = await response.json();
+        const eventsUsers = data.filter((user) => user.event_id === eventId);
+        setEventsUsers(eventsUsers);
+      } catch (error) {
+        console.error(error);
+      }
+    }
+    fetchEventsUsers();
   }, [eventId]);
 
   const handleDashboardClick = () => {

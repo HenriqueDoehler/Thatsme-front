@@ -85,7 +85,7 @@ export default function Register() {
           type="text"
           id="data"
           name="data"
-          placeholder="XX-XX-XXXX"
+          placeholder="mes-dia-ano"
           pattern="[0-9]{2}-[0-9]{2}-[0-9]{4}"
           title=" por favor use esse padrao XX-XX-XXXX"
           value={formState.data}
