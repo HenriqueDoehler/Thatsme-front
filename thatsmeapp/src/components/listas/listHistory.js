@@ -49,7 +49,7 @@ function ListaHistory() {
           <input
             className={styles.Input}
             type="text"
-            placeholder="Buscar por nome..."
+            placeholder="Buscar por Short_code..."
             value={searchTerm}
             onChange={(event) => setSearchTerm(event.target.value)}
           />

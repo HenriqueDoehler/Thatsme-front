@@ -35,6 +35,9 @@ function Wallet() {
     event.preventDefault();
     const { code } = formState;
     const email = localStorage.getItem("email");
+    if (!formState) {
+      setButtonDisabled(true);
+    }
 
     try {
       const response = await fetch(`https://api.thatsme.site/addMedal`, {

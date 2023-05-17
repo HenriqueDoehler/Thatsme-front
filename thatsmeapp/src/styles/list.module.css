@@ -195,3 +195,10 @@ padding-left: 20px;
  .Overlay{
   display: none;
  }
+ .searchContainer{
+  position: fixed;
+  background-color: #333333;
+
+  bottom: 10%;
+  right: 10%;
+ }
