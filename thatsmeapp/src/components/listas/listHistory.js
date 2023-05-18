@@ -15,7 +15,7 @@ function ListaHistory() {
       },
     })
       .then((response) => response.json())
-      .then((data) => console.log(data), window.location.reload())
+      .then(() => window.location.reload())
       .catch((error) => console.error(error));
   };
 
@@ -49,7 +49,7 @@ function ListaHistory() {
           <input
             className={styles.Input}
             type="text"
-            placeholder="Buscar por Short_code..."
+            placeholder="Buscar por Short code..."
             value={searchTerm}
             onChange={(event) => setSearchTerm(event.target.value)}
           />
