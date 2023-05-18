@@ -29,7 +29,7 @@
 }
 
 .modal h1{
-    font-size: 20px;
+    font-size: 20px; 
     text-transform: uppercase;
     height: 25px;
     margin-top: 10px;
@@ -67,4 +67,25 @@
 }
 .modal button:hover{
     background: linear-gradient(to right, #D4942B 0%, #CC392C 100%);
+  }
+
+  @media screen and (max-width: 770px) {
+
+    .modal h1{
+        font-size: 16px; 
+     
+    
+    }
+    .modal h2{
+        font-size: 13px;
+       
+    
+    }
+    
+    .modal p{
+      
+        font-size: 10px;
+           
+    }
+
   }
