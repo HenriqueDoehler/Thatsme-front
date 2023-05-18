@@ -1,19 +1,57 @@
-
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@500&display=swap');
 
 * {
-  box-sizing: border-box;
   padding: 0;
   margin: 0;
+  box-sizing: border-box;
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 17px;
 }
 
 html,
 body {
-  max-width: 100vw;
   overflow-x: hidden;
-  background-color: black;
-  background-image: url('/background.svg');
+  background-color: rgb(3, 3, 3);
+  background-image: url('/background.png');
+  background-repeat: no-repeat;
+  background-position: center;
   background-size: cover;
-  background-position: center center;
+  -o-background-size: cover;
+  -moz-background-size: cover;
+  -webkit-background-size: cover;
   color: whitesmoke;
+  height: 100%;
+  width: 100%;
 }
 
+@media screen and (max-width: 560px) {
+  html,
+  body {
+    background-image: url('/backM.png');
+  }
+}
+
+:root {
+	--clr-neon: rgb(238, 139, 40);
+	--clr-bg: rgba(1, 1, 1, 1);
+	--clr-white: rgba(255, 255, 255, 1);
+
+
+  ::-webkit-scrollbar {
+    width: 5px; 
+    height: 5px; 
+    background-color: transparent; 
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background-color: rgba(238, 237, 237, 0.268); /* torna a barra de rolagem preta */
+    
+  }
+}
+@font-face {
+  font-family: 'MinhaFonte';
+  src: url('/fonts/futur.ttf') format('truetype');
+}

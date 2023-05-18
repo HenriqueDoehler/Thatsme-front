@@ -1,0 +1,70 @@
+.modalOverlayHidden{
+    display: none;
+}
+.modalOverlay{
+    display: flex;
+    position: absolute;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background-color: rgba(15, 15, 15, 0.763);
+    width: 100vw;
+    height: 100vh;
+    z-index: 1000;
+}
+
+.modal{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 95vw;
+    height: 80vh;
+    background-color: rgb(7, 7, 7);
+    border-radius: 20px;
+    border: 1px solid #353535;
+    border-radius: 20.6864px;
+    
+
+}
+
+.modal h1{
+    font-size: 20px;
+    text-transform: uppercase;
+    height: 25px;
+    margin-top: 10px;
+
+}
+.modal h2{
+    font-size: 15px;
+    text-transform: uppercase;
+    height: 25px;
+
+}
+
+.modal p{
+    word-wrap: break-word;
+    max-width: 300px;
+    font-size: 12px;
+       
+}
+.modal button{
+    margin-top: 3.5px;
+  align-items: center;
+  padding: 8px 16px;
+  border: 1px solid #353535;
+
+  width: 90px;
+  height: 46px;
+
+  background: #9E9E9E;
+  border-radius: 60px;
+
+   background: #9E9E9E;
+   color: whitesmoke;
+   margin-top: 10px;
+       
+}
+.modal button:hover{
+    background: linear-gradient(to right, #D4942B 0%, #CC392C 100%);
+  }

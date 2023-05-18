@@ -1,0 +1,134 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@500&display=swap');
+
+.nav {
+    width: 100vw;
+    height: 75px;
+    display: flex;
+    position: absolute;
+    background: linear-gradient(180deg, rgba(33, 29, 40, 0.5) 50%, rgba(33, 29, 40, 0) 131.25%);
+    backdrop-filter: blur(2px);
+    z-index: 100;
+}
+.logo {
+ display: flex;
+ align-items: center;
+ 
+ 
+
+  }
+  .logoImg {
+    width: 35%;
+    padding: 20px;
+   
+  }
+  .sig{
+    padding: 20px;
+    padding-left: 5px;
+  }
+ .menu  {
+    display: none;
+ 
+    margin-left: 50%;
+    opacity: 0;
+    transition: opacity 10s ease-in-out;
+  
+ 
+  }
+  .open {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    position: absolute;
+    background-color: transparent;
+    align-items: center;
+    justify-content: center;
+    top: 30px;
+    opacity: 1;
+    
+    
+  }
+  .menu span {
+    color: #f5ecec;
+    cursor: pointer;
+    font-family: 'Inter', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 18px;
+    margin-right: 90px;
+  }
+
+  .menu span:hover {
+    color: #F39200
+  }
+
+
+      .menuIcon {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    display: block;
+    margin-left: auto;
+    z-index: 1000;
+      }
+  
+  .menuIcon img {
+    width: 2.5rem;
+    z-index: 1000;
+    margin-right: 2rem;
+  }
+  
+  @media screen and (max-width: 770px) {
+    .menu {
+      display: none;
+                
+    }
+    .open { 
+      display: flex;
+      position: absolute;
+      flex-direction: column;
+      align-items: center;
+      top: calc(10vh + -10px);
+      width: 300px;
+      height: 100svh;
+      background-color: rgba(39, 38, 38, 0.99);
+      transition: none;
+      transform: none;
+      margin: 0 auto;
+      right: 0;
+                   
+      }
+      .nav {
+        width: 100vw;
+       }
+      .menuIcon img {
+        width: 1.9rem;
+            
+      }
+      .menu span {
+        
+        margin-right: 0;
+        line-height: 80px;
+      
+      }
+      .span{
+       line-height: 100px;
+       
+      }
+  }
+  
+
+  .fadeIn {
+    animation-name: fadeIn;
+    animation-duration: 0.5s;
+    animation-timing-function: ease-out;
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }

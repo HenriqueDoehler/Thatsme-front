@@ -1,0 +1,124 @@
+.main{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 100vw;
+    height: 120vh;
+}
+.divC{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.ComoFuncionaImg {
+    margin-top: 25%;
+    width: 15%;
+  
+}
+.containerHow{
+    
+
+padding: 5px;
+width: 350px;
+height: 132.9px;
+
+background: rgba(0, 0, 0, 0.3);
+border: 1px solid #444444;
+backdrop-filter: blur(2px);
+
+border-radius: 8px;
+margin: 50px;
+margin-top: 0;
+}
+/* .containerHow img{
+    position: absolute;
+    top: -60px;
+    left: -80px;
+} */
+.main h1{
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 13px;
+    line-height: 15px;
+}
+.main p{
+    margin-top: 12px;
+    font-family: 'Inter';
+font-style: italic;
+font-weight: 400;
+font-size: 12px;
+line-height: 13px;
+
+}
+
+
+@media screen and (max-width: 900px) {
+
+    .main{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100vw;
+        height: 100vh;
+    }
+    .divC{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+    }
+    .divC img{
+        width: 20%;
+    }
+    .containerHow{
+        width: 300px;
+        
+    position: relative;
+    padding: 4px;
+ 
+    height: 100.9px;
+    left: 0%;
+    
+    background: rgba(0, 0, 0, 0.3);
+    border: 1px solid #444444;
+    backdrop-filter: blur(2px);
+    
+    border-radius: 8px;
+    margin: 20px;
+    }
+    .containerHow img{
+        position: absolute;
+        top: -50px;
+        left: -20px;
+        width: 10%;
+        
+    }
+    .main h1{
+        font-family: 'Inter';
+        font-style: normal;
+        font-weight: 700;
+        font-size: 12px;
+        line-height: 15px;
+    }
+    .main p{
+        margin-top: 10px;
+        font-family: 'Inter';
+    font-style: italic;
+    font-weight: 400;
+    font-size: 10px;
+    line-height: 13px;
+    
+    }
+    .ComoFuncionaImg {
+        margin-top: 50%;
+        width: 30%;
+      
+    }
+    .imgText img{
+        width: 20%;
+    }
+   
+  }

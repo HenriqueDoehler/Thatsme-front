@@ -1,0 +1,101 @@
+.container{
+    width: 100vw;
+    height: 100vh;
+    height: 100svh;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between
+}
+.sideMenu{
+    width: 12%;
+    height: 90svh;
+    display: flex;
+    margin-left: 2%;
+    margin-top: 2%;
+    background: rgba(0, 0, 0, 0.5);
+    border: 1px solid #353535;
+    border-radius: 16px;
+    display: flex;
+    align-items: flex-start;
+}
+.topMenu{
+    width: 78%;
+    height: 15svh;
+    display: flex;
+    margin-right: 3%;
+    margin-top: 2%;
+    background: rgba(0, 0, 0, 0.5);
+    border: 1px solid #353535;
+    border-radius: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+.textLeft{
+   padding: 10px ;
+ 
+   line-height: 3rem; 
+   font-size: 18px;
+   position: relative;   
+}
+.leftButton{
+  
+   top: 80%; 
+    position: absolute;
+    font-size:15px;
+    font-family:Arial;
+    width:120px;
+    height:50px;
+    border-width:1px;
+    color:whitesmoke;
+    border-color:#c77801;
+    font-weight:bold;
+    border-top-right-radius:18px;
+    border-bottom-right-radius:18px;
+    box-shadow: 3px 4px 0px 0px #8a2a21;
+    text-shadow: 0px 1px 0px #810e05;
+    background:linear-gradient(#cc7b00, #F39200);
+    z-index: 100;
+}
+.containerM{
+    display: flex;
+    position: absolute;
+    height: 100vh;
+    height: 100svh; 
+    justify-content:center ;
+    flex-direction: column;
+    margin-left: 20%;
+
+}
+
+.containerDash{
+ 
+    display: flex;
+}
+
+.h1{
+    padding-bottom: 30px;
+    font-size: 23px;
+}
+
+.buttonAdd{
+    font-size:13px;
+    font-family:Arial;
+    width:100px;
+    border-width:1px;
+    color:#14396a;
+    border-color:#333333;
+    font-weight:bold;
+    border-top-left-radius:6px;
+    border-top-right-radius:6px;
+    border-bottom-left-radius:6px;
+    border-bottom-right-radius:6px;
+    box-shadow:inset 0px 1px 0px 0px #fff6af;
+    text-shadow:inset 0px 1px 0px #ffee66;
+    background:linear-gradient(#ffec64, #ffab23);
+}
+.buttonAdd:hover {
+    background: linear-gradient(#ffab23, #ffec64);
+  }
+
