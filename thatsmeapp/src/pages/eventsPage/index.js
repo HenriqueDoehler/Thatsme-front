@@ -211,7 +211,7 @@ export default function EventTable() {
 
                 <tr key={medal.id}>
                   <Link
-                    href={`https://sketchfab.com/models/${medal.cod_model}/edit`}
+                    href={`https://sketchfab.com/orgs/thatsmeart/models/${medal.cod_model}/edit`}
                     target="_blank"
                   >
                     <td>{medal.cod_model}</td>
