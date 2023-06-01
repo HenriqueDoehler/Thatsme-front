@@ -192,10 +192,13 @@ border-radius: 90px;
   .jumpMan{
     margin-right: 5%;
   }
-
+.span{
+  text-decoration: underline;
+}
 .span:hover {
   color: orange;
   cursor: pointer;
+
 }
 
 .sketchfabembedwrapper{
