@@ -79,13 +79,20 @@ function Wallet() {
       const email = localStorage.getItem("email");
       const response = await fetch(`https://api.thatsme.site/wallets/${email}`);
       const data = await response.json();
-      setNameUser(data[0].user_name);
-      const codModels = data.map((item) => item.cod_model);
-      setCodModels(codModels);
-      const eventName = data.map((item) => item.event_name);
-      setEventName(eventName);
-      const description = data.map((item) => item.event_description);
-      setDescription(description);
+      setNameUser(data[data.length - 1].user_name);
+      let uniqueCodModels = new Set();
+      let uniqueEventName = new Map();
+      let uniqueDescription = new Map();
+      data.forEach((item) => {
+        if (!uniqueCodModels.has(item.cod_model)) {
+          uniqueCodModels.add(item.cod_model);
+          uniqueEventName.set(item.cod_model, item.event_name);
+          uniqueDescription.set(item.cod_model, item.event_description);
+        }
+      });
+      setCodModels(Array.from(uniqueCodModels));
+      setEventName(Array.from(uniqueEventName.values()));
+      setDescription(Array.from(uniqueDescription.values()));
     };
 
     fetchWallet();
