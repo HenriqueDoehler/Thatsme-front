@@ -1,0 +1,22 @@
+.feedCard {
+  width: 360px;
+  height: 200px;
+}
+
+.container {
+  background-color: rgb(25, 25, 25) ;
+}
+
+.gridMainStyles, .gridSearch {
+  margin-right: 60%;
+}
+
+@media screen and (max-width: 930px) {
+  .gridMainStyles {
+    margin-right: 2rem;
+  }
+
+  .gridSearch {
+    margin-right: 0;
+  }
+}

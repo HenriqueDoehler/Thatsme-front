@@ -3,29 +3,40 @@ import { useState } from "react";
 import { useRouter } from "next/router";
 import Navbar from "@/components/menu/navbar";
 import styles from "@/styles/Home.module.css";
+import Link from "next/link";
 
 export default function Home() {
   const [email, setEmail] = useState("");
   const [error, setError] = useState("");
   const router = useRouter();
 
+  const confirmLogin = (email, userEmail) => {
+    return new Promise((resolve, reject) => {
+      if (email === userEmail) {
+        localStorage.setItem("email", email);
+        router.push("/feed");
+        resolve();
+      } else {
+        setError(
+          "As credenciais fornecidas estão incorretas. Tente novamente."
+        );
+        reject();
+      }
+    });
+  };
+
   const handleEmailSubmit = async (e) => {
     e.preventDefault();
     try {
-      const res = await fetch(`https://api.thatsme.site/wallets/${email}`, {
+      const res = await fetch(`https://api.thatsme.site/userInfo/${email}`, {
         method: "GET",
         headers: {
           "Content-Type": "application/json",
         },
       });
-      if (res.status === 200) {
-        localStorage.setItem("email", email);
-        router.push("/wallet");
-      } else {
-        setError(
-          "As credenciais fornecidas estão incorretas. Tente novamente."
-        );
-      }
+      const data = await res.json();
+
+      await confirmLogin(email, data[0].email);
     } catch (err) {
       setError("error");
     }
@@ -44,53 +55,51 @@ export default function Home() {
       <Navbar />
       <main className={styles.main}>
         <div className={styles.container}>
-          <div className={styles.containerImage}>
-            <div className={styles.left1}>
-              <img
-                draggable="false"
-                className={styles.beyourbestself}
-                src="/Beyourbestself.svg"
-                alt="left-image-1"
-              />
-            </div>
-            <div className={styles.left2}>
-              <img
-                draggable="false"
-                className={styles.thatsmeiconligth}
-                src="/thatsmeiconLigth.svg"
-                alt="left-image-2"
-              />
-            </div>
-          </div>
-
           <div className={styles.right}>
-            <img
-              src="/Mydigitalwallet.svg"
-              alt="right-image"
-              draggable="false"
-            />
+            <h1>MINHA</h1>
+            <h2>CARTEIRA DIGITAL</h2>
             <form className={styles.form} onSubmit={handleEmailSubmit}>
               <label className={styles.label} htmlFor="email">
-                Entre na sua digital wallet preenchendo o e-mail abaixo
+                Entre na sua digital wallet preenchendo o campo abaixo.
               </label>
-
-              <div className={styles.inputGroup}>
-                <input
-                  className={styles.input}
-                  type="email"
-                  id="email"
-                  placeholder="Seu e-mail"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  required
-                />
-                {error && <div className={styles.error}>e-mail invalido</div>}
-              </div>
+              <input
+                className={styles.input}
+                type="email"
+                id="email"
+                placeholder="E-mail"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                required
+              />
+              {error && <div className={styles.error}>E-mail invalido</div>}
 
               <button className={styles.button} type="submit">
                 Acessar
               </button>
             </form>
+            <p>
+              Ainda não está cadastrado?{" "}
+              <Link href="/signup" style={{ color: "white" }}>
+                Clique aqui!
+              </Link>
+            </p>
+          </div>
+
+          <div className={styles.trophy}>
+            <iframe
+              frameborder="0"
+              allowfullscreen
+              mozallowfullscreen="true"
+              webkitallowfullscreen="true"
+              allow="autoplay; fullscreen; xr-spatial-tracking"
+              xr-spatial-tracking
+              execution-while-out-of-viewport
+              execution-while-not-rendered
+              web-share
+              width="1000"
+              height="1000"
+              src={`https://sketchfab.com/models/56c6c36c4ca2498985ff4728d6659d1f/embed?autostart=1&preload=1&transparent=1&ui_animations=0&ui_infos=0&ui_stop=0&ui_inspector=0&ui_watermark_link=0&ui_watermark=0&ui_ar=0&ui_help=0&ui_settings=0&ui_vr=0&ui_fullscreen=0&ui_annotations=0&dnt=1`}
+            ></iframe>
           </div>
         </div>
       </main>

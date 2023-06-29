@@ -6,6 +6,8 @@
     /* background-color: red; */
     width: 40%;
     height: 30%;
+    overflow-y:visible;
+   
 
 }
 .containerFormMail form {
@@ -41,7 +43,7 @@
   border: 1px solid #353535;
   backdrop-filter: blur(5px);
 
-  
+   
   border-radius: 8px;
   color: whitesmoke;
   padding: 10px;
@@ -65,8 +67,9 @@
     height: 200vh;
     display: flex;
     flex-direction: column;
-    overflow-y: auto !important;
+    overflow-y: auto;
     align-items: center;
+    
     
     
   }

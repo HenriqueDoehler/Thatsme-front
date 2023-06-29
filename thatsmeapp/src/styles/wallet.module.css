@@ -1,369 +1,336 @@
-.container{
-    width: 100vw;
-    height: 100vh;
-    height: 100svh;
-    display: flex;
-    flex-direction: column;
-   align-items:flex-start;
-   font-family: 'futur', sans-serif;
-  
+.container {
+  height: 100vh;
+  display: flex;
+  font-family: 'futur', sans-serif;
+  justify-content: center;
+  align-items: center;
 }
+
+.secondaryContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
 .sideMenu{
-    width: 15%;
-    height: 80vh;
-    height: 80svh;
-    display: flex;
-    margin-left: 2%;
-    margin-top:8%;
-    background: rgba(0, 0, 0, 0.5);
-    border: 1px solid #353535;
-    border-radius: 16px;
-    display: flex;
-    align-items: center;
-    position: absolute;
-    flex-wrap: wrap;
- 
-  }
-.topMenu{
-    width: 78%;
-    height: 15svh;
-    display: flex;
-    margin-left: 20%;
-    margin-top: 2%;
-    background: rgba(0, 0, 0, 0.5);
-    border: 1px solid #353535;
-    border-radius: 16px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-}
-.textLeft{
-   padding: 10px ;
-   line-height: 2rem; 
-   font-size: 16px;
-   position: relative;  
-   font-family: 'futur', sans-serif;
-   
-}
-.leftButton{
-  
-   top: 80%; 
-    position: absolute;
-    font-size:15px;
-    font-family:Arial;
-    width:120px;
-    height:50px;
-    border-width:1px;
-    color:whitesmoke;
-    border-color:#c77801;
-    font-weight:bold;
-    border-top-right-radius:18px;
-    border-bottom-right-radius:18px;
-    box-shadow: 3px 4px 0px 0px #8a2a21;
-    text-shadow: 0px 1px 0px #810e05;
-    background:linear-gradient(#cc7b00, #F39200);
-    z-index: 100;
-
-    
-}
-.containerM{
-    display: flex;
-    position: absolute;
-    height: 100vh;
-    height: 100svh; 
-    justify-content:center ;
-    flex-direction: column;
-    margin-left: 20%;
-
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
 }
 
-.containerDash{
- 
-    display: flex;
+.sideMenu h1 {
+  text-align: center;
+  font-size: 2rem;
 }
 
-.h1{
-    padding-bottom: 30px;
-    font-size: 23px;
+.userAvatar {
+  background-color: #9E9E9E;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: x-large;
+}
+
+.topMenu {
+  display: flex;
+  background: rgba(0, 0, 0, 0.5);
+  border: 1px solid #353535;
+  border-radius: 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.btnContainer {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  border-right: 1px solid rgb(52, 51, 51);
+  padding-right: 2rem;
+}
+
+.topBtnContainer {
+  display: flex;
+  flex-direction: column;
+  margin: 5rem 0px;
+}
+
+.sideBtn, .exitBtn {
+  cursor: pointer;
+  padding: 1rem 1.5rem;
+  border-width:1px;
+  color:whitesmoke;
+  border-color:#c77801;
+  font-weight:bold;
+  border-radius: 10px;
+  box-shadow: 3px 4px 0px 0px #8a2a21;
+  text-shadow: 0px 1px 0px #810e05;
+  background:linear-gradient(#cc7b00, #F39200);
+  margin-top: 1rem;
+  transition: background 0.3s ease, color 0.3s ease, transform 0.3s ease;
+}
+
+.sideBtn:hover,
+.exitBtn:hover {
+  background: whitesmoke;
+  color: #f39200;
+  transform: scale(1.1)
+}
+
+.exitBtn {
+  padding: 1rem 2.5rem;
+}
+
+.containerM {
+  display: flex;
+  position: absolute;
+  height: 100vh;
+  height: 100svh; 
+  justify-content:center ;
+  flex-direction: column;
+  margin-left: 20%;
+
+}
+
+.containerDash {
+  display: flex;
+}
+
+.h1 {
+  padding-bottom: 30px;
+  font-size: 23px;
 }
 
 .buttonAdd{
-display: flex;
-flex-direction: row;
-justify-content: center;
-align-items: center;
-width: 200px;
-height: 36px;
-background: #9E9E9E;
-border-radius: 90px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 200px;
+  height: 36px;
+  background: #9E9E9E;
+  border-radius: 90px;
 }
 
 
 .canvas{
-  width: 100vw;
-  height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
 
-  margin-top: 10%;
   }
   
   
 .containerInput{
-    width: 400px;
-    height: 400px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  width: 400px;
+  height: 400px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .containerWallet{
   width: 85vw;
   height: 70vh;
-  margin-left: 300px;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
   }
 
- 
-
-  .walletC{
-    display: flex;
-    width: 80vw;
-    height: 70vh;
-    justify-content: space-evenly;
-    flex-wrap: wrap;
-
-  }
- 
-
-
-
-
+.walletC{
+  display: flex;
+  width: 80vw;
+  height: 70vh;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+  
+.noMedalForm {
+  display: flex;
+  flex-direction: column;
+}
+  
 .input  {
-    padding: 8px 8px 8px 24px;
-    gap: 8px;
-    width: 480px;
-    height: 52px;
-     background: rgba(239, 239, 255, 0.07);
-     border: 1px solid #353535;
-     border-radius: 90px;
-     color: whitesmoke;
-  }
+  padding: 8px 8px 8px 24px;
+  gap: 8px;
+  width: 480px;
+  height: 52px;
+  background: rgba(239, 239, 255, 0.07);
+  border: 1px solid #353535;
+  border-radius: 90px;
+  color: whitesmoke;
+}
   
-  .button{
-    margin-top: 3.5px;
-    align-items: center;
-    padding: 8px 16px;
-    border: 1px solid #353535;
-  
-    width: 90px;
-    height: 46px;
-  
-    background: #9E9E9E;
-    border-radius: 60px;
-  
-     background: #9E9E9E;
-     color: whitesmoke;
-     
-  
-  }
-  
-  .form {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-  }
-  .label {
-    display: flex;
-    justify-content: center;
-    padding-bottom: 10px;
+.button{
+  margin-top: 3.5px;
+  align-items: center;
+  padding: 8px 16px;
+  border: 1px solid #353535;
+  width: 90px;
+  height: 46px;
+  background: #9E9E9E;
+  border-radius: 60px;
+  background: #9E9E9E;
+  color: whitesmoke;
   }
 
+.form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.label {
+  display: flex;
+  justify-content: center;
+  padding-bottom: 10px;
+}
   
-  .button:hover{
-    background: linear-gradient(to right, #D4942B 0%, #CC392C 100%);
-  }
-  .jumpMan{
-    margin-right: 5%;
-  }
+  
+.button:hover{
+  background: linear-gradient(to right, #D4942B 0%, #CC392C 100%);
+}
+  
+.jumpMan{
+  margin-right: 5%;
+}
+
 .span{
   text-decoration: underline;
 }
+
 .span:hover {
   color: orange;
   cursor: pointer;
-
 }
 
 .sketchfabembedwrapper{
   border: 1.14649px solid #353535;
-border-radius: 6.11463px;
-display: flex;
-align-items: center;
-justify-content: center;
-flex-direction: column;
-width: 250px;
-height: 320px;
-padding: 20px;
-margin-top: 20px;
+  border-radius: 6.11463px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 250px;
+  height: 320px;
+  padding: 20px;
+  margin-top: 20px;
 }
 
 .formAddMedal{
-  position:absolute;
-  top: 15%;
-  left: 50%;
- 
-}
-.formAddMedal input{
-  padding: 8px 8px 8px 24px;
-  gap: 8px;
-  width: 150px;
-  height: 42px;
-   background: rgba(239, 239, 255, 0.07);
-   border: 1px solid #353535;
-   border-radius: 90px;
-   color: whitesmoke;
-}
- .formAddMedal button{
-
- 
+  display: flex;
+  justify-content: center;
   align-items: center;
-  
+  flex-direction: column;
+}
+
+.formAddMedal form {
+  display: flex;
+  gap: 1rem;
+  margin: 2rem;
+}
+
+.formAddMedal input{
+  background: rgba(239, 239, 255, 0.07);
+  color: white;
+  padding: 0.5rem;
+  border-radius: 5px;
+  border: 1px white solid;
+  text-align: center;
+  font-size: small;
+  border-radius: 60px;
+}
+
+ .formAddMedal button{
+  align-items: center;
+  padding: 1rem;
   border: 1px solid #353535;
-
-  width: 90px;
-  height: 36px;
-
   background: #9E9E9E;
   border-radius: 60px;
-
-   background: #9E9E9E;
-   color: whitesmoke;
-
+  color: whitesmoke;
  }
+
  .formAddMedal button:hover{
   background: linear-gradient(to right, #D4942B 0%, #CC392C 100%);
 }
+
 .nameMobile{
   display: none;
 }
 
 .formAddMedal1{
- 
- display: none;
-  
- }
-
-
-  @media screen and (max-width: 930px) {
-    .nameMobile{
-      display: flex;
-      margin-top: 75px;
-      margin-bottom: -10px;
-      margin-left: 10px;
-      font-size: 18px;
-    
-    }
-.topMenu{
-  display: none;
+  display: none
 }
-.sideMenu{
+
+.noMedalContainer {
   display: flex;
-  width: 95vw;
-  height: 100px;
-  margin-left: 2%;
-  margin-top: 2%;
-  background: rgba(0, 0, 0, 0.5);
-  border: 1px solid #353535;
-  border-radius: 16px;
-  align-items: flex-start;
-  position: absolute;
-  flex-wrap: wrap;
-  overflow-wrap: break-word;
-  display: none;
+  justify-content: space-around;
+  align-items: center;
 }
 
-.containerWallet{
- 
-  margin-left: 0;
+.noMedalContainer h1 {
+  font-size: 2.5rem;
+  margin-right: 20rem;
+}
 
+
+@media screen and (max-width: 930px) {
+  .sideMenu {
+    display: flex;
+    flex-direction: column;
+    margin-top: 2rem;
   }
 
-  .leftButton{
-     position: absolute;
-     margin-left: 60%;
-     top: 0;
-     z-index: 100;
-     border-top-left-radius:0px;
-     border-top-right-radius:0px;
-     border-bottom-left-radius:18px;
- 
-     
- }
-
- .jumpMan{
-  display: none;
-}
-
-.imgWallet{
-  width: 50%;
-  height: 50%;
-  
-  
-}
-.input{
-  width: 280px;
-}
-
-
-.formAddMedal{
- 
- display: none;
- 
-}
-.formAddMedal1{
- 
-  display: flex;
-  width: 100%;
-  align-items: center;
-  justify-content: center;
-  margin-top: 10px;
-  margin-bottom: 10px;
-  
- }
-
- .formAddMedal1 input{
-  padding: 8px 8px 8px 24px;
-  gap: 8px;
-  width: 150px;
-  height: 42px;
-   background: rgba(239, 239, 255, 0.07);
-   border: 1px solid #353535;
-   border-radius: 90px;
-   color: whitesmoke;
- }
- .formAddMedal1 button{
- 
-  align-items: center;
-  
-  border: 1px solid #353535;
-
-  width: 90px;
-  height: 36px;
-
-  background: #9E9E9E;
-  border-radius: 60px;
-
-   background: #9E9E9E;
-   color: whitesmoke;
- }
-
+  .sideMenu h1 {
+    font-size: 1.5rem;
+    margin-top: 0.5rem;
   }
+
+  .formAddMedal form {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .formAddMedal input {
+    padding: 1rem;
+  }
+
+  .container {
+    display: flex;
+    flex-direction: column;
+    padding-top: 5rem;
+  }
+
+  .btnContainer, .topBtnContainer {
+    display: flex;
+    flex-direction: row;
+    margin: 0px;
+    padding: 0px;
+    gap: 0.5rem;
+    height: fit-content;
+  }
+
+  .exitBtn {
+    padding: 1rem;
+  }
+
+  .noMedalContainer {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .noMedalContainer h1 {
+    margin-right: 0px;
+    margin-top: 10rem;
+    font-size: 1.5rem;
+  }
+}
 
 

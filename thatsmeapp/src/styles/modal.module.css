@@ -13,10 +13,10 @@
     z-index: 1000;
 }
 
-.modal{
+.modal {
     display: flex;
-    align-items: center;
     justify-content: center;
+    align-items: center;
     flex-direction: column;
     width: 95vw;
     height: 80vh;
@@ -29,25 +29,41 @@
 }
 
 .modal h1{
-    font-size: 20px; 
     text-transform: uppercase;
     height: 25px;
     margin-top: 10px;
-
 }
+
 .modal h2{
-    font-size: 15px;
+    font-size: 2rem;
     text-transform: uppercase;
-    height: 25px;
-
+    margin: 1rem 0px;
 }
 
-.modal p{
-    word-wrap: break-word;
-    max-width: 300px;
-    font-size: 12px;
-       
+.textContainer {
+    display: flex;
+    flex-direction: column;
+    width: 25%;
+    margin: 1rem 0;
+    text-align: justify;
+    overflow-y: auto;
 }
+
+.textContainer p{
+    font-size: 1rem;
+    font-style: italic;
+    text-align: end;
+}
+
+.textContainer h3 {
+    text-align: start;
+    margin-bottom: 0.3rem;
+}
+
+.textContainer h4 {
+    margin-top: 1rem;
+}
+
 .modal button{
     margin-top: 3.5px;
   align-items: center;

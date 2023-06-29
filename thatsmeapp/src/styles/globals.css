@@ -1,10 +1,10 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,400&display=swap');
 
 * {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  font-family: 'Inter';
+  font-family: 'Montserrat', sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 14px;
@@ -13,25 +13,17 @@
 
 html,
 body {
+  overflow: auto;
   overflow-x: hidden;
-  background-color: rgb(3, 3, 3);
-  background-image: url('/background.png');
+  background-color: rgb(25, 25, 25);
+  /* background-image: url('/background.png');
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
   -o-background-size: cover;
   -moz-background-size: cover;
-  -webkit-background-size: cover;
+  -webkit-background-size: cover; */
   color: whitesmoke;
-  height: 100%;
-  width: 100%;
-}
-
-@media screen and (max-width: 560px) {
-  html,
-  body {
-    background-image: url('/backM.png');
-  }
 }
 
 :root {
