@@ -4,7 +4,6 @@
   font-family: 'futur', sans-serif;
   justify-content: center;
   align-items: center;
-  overflow: hidden;
 }
 
 .secondaryContainer {
@@ -12,7 +11,6 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-top: 15%;
 }
 
 .sideMenu{
@@ -124,8 +122,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-
-  }
+}
   
   
 .containerInput{
@@ -284,6 +281,16 @@
 
 
 @media screen and (max-width: 930px) {
+
+  .container {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .btnContainer {
+    display: none;
+  }
+
   .sideMenu {
     display: flex;
     flex-direction: column;
@@ -293,6 +300,15 @@
   .sideMenu h1 {
     font-size: 1.5rem;
     margin-top: 0.5rem;
+  }
+ 
+  .input {
+    max-width: 200px;
+  }
+
+  .formAddMedal {
+    margin-left: 100%;
+    margin-bottom: 50%;
   }
 
   .formAddMedal form {
@@ -304,13 +320,8 @@
     padding: 1rem;
   }
 
-  .container {
-    display: flex;
-    flex-direction: column;
-    padding-top: 5rem;
-  }
 
-  .btnContainer, .topBtnContainer {
+  .topBtnContainer {
     display: flex;
     flex-direction: row;
     margin: 0px;
@@ -333,6 +344,12 @@
     margin-top: 10rem;
     font-size: 1.5rem;
   }
+
+  .formAddMedal img {
+    display: none;
+  }
+
+  .jumpMan {
+    display: none;
+  }
 }
-
-

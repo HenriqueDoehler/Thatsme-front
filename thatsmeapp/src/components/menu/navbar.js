@@ -38,6 +38,14 @@ const Navbar = () => {
           isOpen ? styles.fadeIn : ""
         }`}
       >
+        <div className={styles.walletAndFeedContainer}>
+        <Link style={{ textDecoration: "none" }} href="/feed" passHref>
+          <span className={styles.span}>Feed</span>
+        </Link>
+        <Link style={{ textDecoration: "none" }} href="/wallet" passHref>
+          <span className={styles.span}>Carteira</span>
+        </Link>
+        </div>
         <Link style={{ textDecoration: "none" }} href="/" passHref>
           <span className={styles.span}>Home</span>
         </Link>

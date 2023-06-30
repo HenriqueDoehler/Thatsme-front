@@ -16,6 +16,7 @@ function ViewOtherUser() {
   const [eventDate, setEventDate] = useState([]);
   const [eventName, setEventName] = useState([]);
   const [description, setDescription] = useState([]);
+  const [companyName, setCompanyName] = useState([]);
   const [modalData, setModalData] = useState({
     codModel: "",
     eventName: "",
@@ -23,6 +24,7 @@ function ViewOtherUser() {
     nameUser: "",
     eventAdress: "",
     eventDate: "",
+    companyName: ""
   });
 
   const handleEventClick = (index) => {
@@ -34,6 +36,7 @@ function ViewOtherUser() {
       nameUser: nameUser,
       eventAdress: eventAdress[index],
       eventDate: eventDate[index],
+      companyName: companyName[index]
     });
   };
 
@@ -48,6 +51,8 @@ function ViewOtherUser() {
         let uniqueDescription = new Map();
         let uniqueAdress = new Map();
         let uniqueDate = new Map();
+        let uniqueCompanyName = new Map();
+
         data.forEach((item) => {
           if (!uniqueCodModels.has(item.cod_model)) {
             uniqueCodModels.add(item.cod_model);
@@ -55,6 +60,7 @@ function ViewOtherUser() {
             uniqueDescription.set(item.cod_model, item.event_description);
             uniqueAdress.set(item.cod_model, item.event_address);
             uniqueDate.set(item.cod_model, item.event_date);
+            uniqueCompanyName.set(item.cod_model, item.company_name);
           }
         });
         setCodModels(Array.from(uniqueCodModels));
@@ -62,6 +68,7 @@ function ViewOtherUser() {
         setDescription(Array.from(uniqueDescription.values()));
         setEventAddress(Array.from(uniqueAdress.values()));
         setEventDate(Array.from(uniqueDate.values()));
+        setCompanyName(Array.from(uniqueCompanyName.values()))
       } catch (err) {
         console.log(err.message);
       }
@@ -88,6 +95,7 @@ function ViewOtherUser() {
         nameUser={modalData.nameUser}
         eventAdress={modalData.eventAdress}
         eventDate={modalData.eventDate}
+        companyName={modalData.companyName}
       />
       {codModels.some((codModel) => codModel !== null) ? (
         <>
