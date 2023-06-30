@@ -4,6 +4,7 @@
   font-family: 'futur', sans-serif;
   justify-content: center;
   align-items: center;
+  overflow: hidden;
 }
 
 .secondaryContainer {
@@ -11,6 +12,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  margin-top: 15%;
 }
 
 .sideMenu{

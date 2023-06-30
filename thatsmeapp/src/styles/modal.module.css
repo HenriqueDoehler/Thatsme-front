@@ -45,7 +45,7 @@
     flex-direction: column;
     width: 25%;
     margin: 1rem 0;
-    text-align: justify;
+    text-align:start;
     overflow-y: auto;
 }
 
@@ -98,6 +98,12 @@
     .modal p{
       
         font-size: 10px;   
+    }
+
+    .textContainer {
+  
+        width: 90%;
+    
     }
 
   }

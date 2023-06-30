@@ -5,8 +5,9 @@
   display: flex;
   background: linear-gradient(180deg, rgba(33, 29, 40, 0.5) 50%, rgba(33, 29, 40, 0) 131.25%);
   backdrop-filter: blur(2px);
-  position: fixed; 
+  position: relative; 
   z-index: 1; 
+
 }
 
 .logo {

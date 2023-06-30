@@ -13,7 +13,7 @@ export const StyledIconButtonFavoriteIcon = styled(IconButton)(() => ({
 }));
 
 export const StyledIconFavoriteIconPositive = styled(FavoriteIcon)(() => ({
-  color: "#FF4F79", 
+  color: "#FF4F79",
 }));
 
 /* export const AnimationCard = styled(Card)(() => ({
@@ -51,7 +51,7 @@ export const StyledIconFavoriteIconPositive = styled(FavoriteIcon)(() => ({
 export const AnimationCard = styled(Card)(() => ({
   marginTop: "3rem",
   width: "360px",
-  borderRadius: '15px',
+  borderRadius: "15px",
   backgroundColor: "transparent",
   border: "1px solid rgba(245, 245, 245, 0.4)",
   transition: "transform 0.3s ease-in-out, border-color 0.3s ease-in-out",

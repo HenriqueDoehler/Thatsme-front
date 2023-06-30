@@ -20,15 +20,17 @@ export default function SearchField({ setSearchField }) {
     <Grid
       container
       mt={2}
-      justifyContent='center'
+      justifyContent="center"
       sx={{
         "& .MuiPaper-root": {
           color: "white",
         },
-      }}>
+      }}
+    >
       <Paper
-        component='form'
+        component="form"
         sx={{
+          marginTop: "35%",
           padding: "8px 8px 8px 24px",
           display: "flex",
           alignItems: "center",
@@ -40,14 +42,15 @@ export default function SearchField({ setSearchField }) {
           border: isFocused ? "1px solid white" : "1px solid transparent",
           transition: "border 0.3s",
           "@media (max-width: 400px)": { width: "250px" },
-        }}>
+        }}
+      >
         <InputBase
           sx={{
             ml: 1,
             flex: 1,
             color: "white",
           }}
-          placeholder='Buscar'
+          placeholder="Buscar"
           onChange={(e) => {
             setSearchField(e.target.value);
           }}
@@ -55,12 +58,13 @@ export default function SearchField({ setSearchField }) {
           onBlur={handleInputBlur}
         />
         <IconButton
-          type='button'
+          type="button"
           sx={{
             p: "10px",
             color: "white",
           }}
-          aria-label='search'>
+          aria-label="search"
+        >
           <SearchIcon />
         </IconButton>
       </Paper>

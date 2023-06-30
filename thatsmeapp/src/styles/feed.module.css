@@ -1,6 +1,8 @@
 .feedCard {
   width: 360px;
   height: 200px;
+
+
 }
 
 .container {
@@ -8,12 +10,12 @@
 }
 
 .gridMainStyles, .gridSearch {
-  margin-right: 60%;
+  margin-right: 55%;
 }
 
 @media screen and (max-width: 930px) {
   .gridMainStyles {
-    margin-right: 2rem;
+    margin-right: 6rem;
   }
 
   .gridSearch {
