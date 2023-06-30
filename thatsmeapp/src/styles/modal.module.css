@@ -45,7 +45,7 @@
     flex-direction: column;
     width: 25%;
     margin: 1rem 0;
-    text-align:start;
+    text-align: justify;
     overflow-y: auto;
 }
 
@@ -53,6 +53,7 @@
     font-size: 1rem;
     font-style: italic;
     text-align: end;
+    overflow-y: hidden;
 }
 
 .textContainer h3 {
@@ -101,9 +102,7 @@
     }
 
     .textContainer {
-  
         width: 90%;
-    
     }
 
   }

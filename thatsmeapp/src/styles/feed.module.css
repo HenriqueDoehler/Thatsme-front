@@ -1,24 +1,32 @@
 .feedCard {
   width: 360px;
   height: 200px;
-
-
 }
 
 .container {
   background-color: rgb(25, 25, 25) ;
 }
 
-.gridMainStyles, .gridSearch {
-  margin-right: 55%;
+.feedContainer {
+  padding-left: 15%;
 }
 
-@media screen and (max-width: 930px) {
-  .gridMainStyles {
-    margin-right: 6rem;
+.cardContainer {
+  padding-left: 2rem;
+}
+
+@media screen and (max-width: 650px) {
+  .feedContainer {
+    padding-left: 0;
   }
 
-  .gridSearch {
-    margin-right: 0;
+  .cardContainer {
+    padding: 0;
   }
+
+  .searchAndAvatarContainer {
+    display: flex;
+    gap: 0.5rem;
+  }
+
 }

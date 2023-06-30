@@ -163,13 +163,14 @@ export default function Feed() {
           <Grid
             container
             alignItems="baseline"
+            className={styles.feedContainer}
             sx={{
               justifyContent: {
                 xs: "center",
-                sm: "end",
-                md: "end",
-                lg: "end",
-                xl: "end",
+                sm: "start",
+                md: "start",
+                lg: "start",
+                xl: "start",
               },
             }}
             item
@@ -199,10 +200,11 @@ export default function Feed() {
               <Avatar
                 alt="Remy Sharp"
                 src="/static/images/avatar/1.jpg"
-                sx={{ width: 72, height: 72 }}
+                sx={{ width: 72, height: 72, marginRight: '10px' }}
+
               />
             </Grid>
-            <Grid item className={styles.gridSearch}>
+            <Grid item >
               <SearchField setSearchField={setSearchField} />
               {!initialFeedData && (
                 <p style={{ marginTop: "50%", fontSize: "1.5rem" }}>
@@ -232,14 +234,20 @@ export default function Feed() {
                 return (
                   <Grid
                     container
-                    justifyContent="end"
+                    className={styles.cardContainer}
                     alignItems="center"
                     sx={{
                       "& .MuiTypography-root": {
                         color: "white",
                       },
+                      justifyContent: {
+                        xs: 'center',
+                        sm: 'start',
+                        md: 'start',
+                        lg: 'start',
+                        xl: 'start',
+                      },
                     }}
-                    className={styles.gridMainStyles}
                     key={id}
                   >
                     <AnimationCard>
