@@ -1,0 +1,32 @@
+.feedCard {
+  width: 360px;
+  height: 200px;
+}
+
+.container {
+  background-color: rgb(25, 25, 25) ;
+}
+
+.feedContainer {
+  padding-left: 15%;
+}
+
+.cardContainer {
+  padding-left: 2rem;
+}
+
+@media screen and (max-width: 650px) {
+  .feedContainer {
+    padding-left: 0;
+  }
+
+  .cardContainer {
+    padding: 0;
+  }
+
+  .searchAndAvatarContainer {
+    display: flex;
+    gap: 0.5rem;
+  }
+
+}

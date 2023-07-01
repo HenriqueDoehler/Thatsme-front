@@ -1,6 +1,8 @@
 import styles from "@/styles/wallet.module.css";
 import { useRouter } from "next/router";
 import { useState, useEffect } from "react";
+import Navbar from "../menu/navbar";
+import SideNav from "../menu/sideNav";
 
 const InputMedal = () => {
   const [code, setCode] = useState("");
@@ -48,57 +50,55 @@ const InputMedal = () => {
 
   return (
     <>
-      <div className={styles.container} style={{ overflow: "auto" }}>
-        <div className={styles.sideMenu}>
-          <h1 style={{ fontSize: "20px" }} className={styles.textLeft}>
-            Bem-Vindo
-          </h1>
-          <button onClick={handleLogout} className={styles.leftButton}>
-            Sair
-          </button>
-        </div>
-        <div className={styles.topMenu}>
-          <img src="/logoDash.svg" alt="Logo" />
-        </div>
-
-        <div className={styles.canvas}>
+      <Navbar />
+      <div
+        className={styles.container}
+        style={{ display: "flex", justifyContent: "space-around" }}
+      >
+        <SideNav />
+        <div className={styles.canvas} style={{ marginRight: "20rem" }}>
           <img className={styles.jumpMan} src="/jumpMan.svg" alt="" />
-          <div className={styles.containerInput}>
-            <form className={styles.form} onSubmit={handleEmailSubmit}>
-              <img
-                className={styles.imgWallet}
-                src="/Mydigitalwallet.svg"
-                alt="right-image"
-                draggable="false"
-              />
-              <label className={styles.label} htmlFor="email">
-                Conquiste a sua 1ª medalha
-              </label>
-
-              <div className={styles.inputGroup}>
-                <input
-                  className={styles.input}
-                  type="text"
-                  id="email"
-                  placeholder="Codigo"
-                  value={code}
-                  onChange={(e) => {
-                    setCode(e.target.value);
-                    setButtonDisabled(false);
-                  }}
-                  required
+          <div className={styles.formAddMedal}>
+            <h1 style={{ fontSize: "2rem" }} className={styles.textLeft}>
+              Bem-Vindo
+            </h1>
+              <form onSubmit={handleEmailSubmit} className={styles.noMedalForm}>
+                <img
+                  className={styles.imgWallet}
+                  src="/Mydigitalwallet.svg"
+                  alt="right-image"
+                  draggable="false"
                 />
-                {error && <div className={styles.error}>{error}</div>}
-              </div>
+                <label className={styles.label} htmlFor="email">
+                  Conquiste a sua 1ª medalha
+                </label>
 
-              <button
-                className={styles.button}
-                type="submit"
-                disabled={buttonDisabled}
-              >
-                Resgatar
-              </button>
-            </form>
+                <div className={styles.inputGroup}>
+                  <input
+                    className={styles.input}
+                    type="text"
+                    id="email"
+                    placeholder="Codigo"
+                    value={code}
+                    onChange={(e) => {
+                      setCode(e.target.value);
+                      setButtonDisabled(false);
+                    }}
+                    required
+                  />
+                  {error && <div className={styles.error}>{error}</div>}
+                </div>
+                <div style={{ display: "flex", justifyContent: "end" }}>
+                  <button
+                    className={styles.button}
+                    type="submit"
+                    disabled={buttonDisabled}
+                  >
+                    Resgatar
+                  </button>
+                </div>
+              </form>
+            
           </div>
         </div>
       </div>

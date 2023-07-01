@@ -43,13 +43,13 @@
   }
   .label{
     max-width: 327px;
-height: 52px;
-background: rgba(239, 239, 255, 0.15);
-border: 1px solid #353535;
-backdrop-filter: blur(5px);
-border-radius: 8px;
-color: rgb(137, 137, 137);
-font-size: large;
+    height: 52px;
+    background: rgba(239, 239, 255, 0.15);
+    border: 1px solid #353535;
+    backdrop-filter: blur(5px);
+    border-radius: 8px;
+    color: rgb(137, 137, 137);
+    font-size: large;
 
   }
   

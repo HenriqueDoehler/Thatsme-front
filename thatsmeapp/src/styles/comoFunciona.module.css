@@ -4,17 +4,21 @@
     justify-content: center;
     flex-direction: column;
     width: 100vw;
-    height: 120vh;
+    
+ 
 }
 .divC{
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
+    
 }
 .ComoFuncionaImg {
-    margin-top: 25%;
-    width: 15%;
+    /* margin-top: 25%; */
+    width: 20%;
+    margin-top: 10%;
+    margin-bottom: 5%;
   
 }
 .containerHow{
@@ -62,7 +66,6 @@ line-height: 13px;
         align-items: center;
         justify-content: center;
         width: 100vw;
-        height: 100vh;
     }
     .divC{
         display: flex;
@@ -113,7 +116,7 @@ line-height: 13px;
     
     }
     .ComoFuncionaImg {
-        margin-top: 50%;
+        margin-top: 10%;
         width: 30%;
       
     }
