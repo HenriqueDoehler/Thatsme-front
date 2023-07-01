@@ -63,7 +63,7 @@ export default function Feed() {
     }
   }, []);
 
-  const handleFeedLike = useCallback(async (medalId) => {
+  const handleFeedLike = useCallback(async (walletId) => {
     const email = localStorage.getItem("email");
     try {
       await fetch(`https://api.thatsme.site/like`, {
@@ -71,7 +71,7 @@ export default function Feed() {
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({ email, medalId }),
+        body: JSON.stringify({ email, walletId }),
       });
       handleFeedInformation();
     } catch (err) {
@@ -329,7 +329,7 @@ export default function Feed() {
                           <Grid item>
                             <StyledIconButtonFavoriteIcon
                               aria-label="add to favorites"
-                              onClick={() => handleFeedLike(medal_id)}
+                              onClick={() => handleFeedLike(id)}
                             >
                               {liked ? (
                                 <StyledIconFavoriteIconPositive />
