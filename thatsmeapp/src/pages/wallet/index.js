@@ -84,7 +84,6 @@ function Wallet() {
         const email = localStorage.getItem("email");
         const response = await fetch(`https://api.thatsme.site/wallets/${email}`);
         const data = await response.json();
-        console.log(data)
 
         setNameUser(data[data.length - 1].user_name);
         

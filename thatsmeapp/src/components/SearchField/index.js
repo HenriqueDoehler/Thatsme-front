@@ -30,7 +30,6 @@ export default function SearchField({ setSearchField }) {
       <Paper
         component="form"
         sx={{
-          marginTop: "35%",
           padding: "8px 8px 8px 24px",
           display: "flex",
           alignItems: "center",

@@ -24,6 +24,7 @@ import Modal from "@/components/modals/modalsFrame";
 export default function Feed() {
   const router = useRouter();
   const { setEmail } = useContext(EmailContext);
+  const [thisUser, setThisUser] = useState("");
   const [showModal, setShowModal] = useState(false);
   const [searchField, setSearchField] = useState("");
   const [initialFeedData, setInitialFeedData] = useState([]);
@@ -54,6 +55,7 @@ export default function Feed() {
       );
       const data = await response.json();
       setInitialFeedData(data?.data);
+      console.log(data.data);
       const newData = data.data.map((medal) => medal.cod_model);
       setCodeMedal(newData);
     } catch (err) {
@@ -95,14 +97,6 @@ export default function Feed() {
   }, [urlThumbnail]);
 
   useEffect(() => {
-    handleFeedInformation();
-  }, [handleFeedInformation]);
-
-  useEffect(() => {
-    handleThumbnail();
-  }, [handleThumbnail]);
-
-  useEffect(() => {
     const filterFeed = () => {
       const filtered = initialFeedData?.filter((medal) => {
         const nameLowerCase = medal?.user_name.toLowerCase();
@@ -140,6 +134,25 @@ export default function Feed() {
     });
     setShowModal(true);
   }
+
+  const mainUser = async () => {
+    const email = localStorage.getItem("email");
+    const response = await fetch(`https://api.thatsme.site/wallets/${email}`);
+    const data = await response.json();
+    setThisUser(data[data.length - 1].user_name);
+  };
+
+  useEffect(() => {
+    handleFeedInformation();
+  }, [handleFeedInformation]);
+
+  useEffect(() => {
+    handleThumbnail();
+  }, [handleThumbnail]);
+
+  useEffect(() => {
+    mainUser();
+  }, [thisUser]);
 
   return (
     <div className={styles.container}>
@@ -198,13 +211,12 @@ export default function Feed() {
               }}
             >
               <Avatar
-                alt="Remy Sharp"
+                alt={thisUser[0]}
                 src="/static/images/avatar/1.jpg"
-                sx={{ width: 72, height: 72, marginRight: '10px' }}
-
+                sx={{ width: 72, height: 72, marginRight: "10px", fontSize: '2rem' }}
               />
             </Grid>
-            <Grid item >
+            <Grid item>
               <SearchField setSearchField={setSearchField} />
               {!initialFeedData && (
                 <p style={{ marginTop: "50%", fontSize: "1.5rem" }}>
@@ -241,11 +253,11 @@ export default function Feed() {
                         color: "white",
                       },
                       justifyContent: {
-                        xs: 'center',
-                        sm: 'start',
-                        md: 'start',
-                        lg: 'start',
-                        xl: 'start',
+                        xs: "center",
+                        sm: "start",
+                        md: "start",
+                        lg: "start",
+                        xl: "start",
                       },
                     }}
                     key={id}
