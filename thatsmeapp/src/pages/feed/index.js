@@ -15,7 +15,7 @@ import {
   StyledIconButtonFavoriteIcon,
   AnimationCard,
   StyledIconFavoriteIconPositive,
-} from "./styles";
+} from "../../styles/styles.js";
 import { useState, useEffect, useContext, useCallback } from "react";
 import { EmailContext } from "@/context/EmailContext";
 import { useRouter } from "next/router";
@@ -213,7 +213,12 @@ export default function Feed() {
               <Avatar
                 alt={thisUser[0]}
                 src="/static/images/avatar/1.jpg"
-                sx={{ width: 72, height: 72, marginRight: "10px", fontSize: '2rem' }}
+                sx={{
+                  width: 72,
+                  height: 72,
+                  marginRight: "10px",
+                  fontSize: "2rem",
+                }}
               />
             </Grid>
             <Grid item>
