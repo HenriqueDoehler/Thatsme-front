@@ -295,7 +295,7 @@
   .sideMenu {
     display: flex;
     flex-direction: column;
-    margin-top: 2rem;
+    margin-top: 8rem;
   }
 
   .sideMenu h1 {
