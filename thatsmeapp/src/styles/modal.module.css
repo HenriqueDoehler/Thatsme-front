@@ -1,32 +1,37 @@
-.modalOverlayHidden{
+.modalOverlayHidden {
     display: none;
-}
-.modalOverlay{
+  }
+  
+  .modalOverlay {
     display: flex;
-    position: absolute;
+    position: fixed;
+    top: 0;
+    left: 0;
     align-items: center;
     justify-content: center;
-    flex-direction: column;
-    background-color: rgba(15, 15, 15, 0.763);
     width: 100vw;
     height: 100vh;
+    background-color: rgba(15, 15, 15, 0.763);
     z-index: 1000;
-}
-
-.modal {
+  }
+  
+  .modal {
     display: flex;
+    position: relative;
     justify-content: center;
     align-items: center;
     flex-direction: column;
     width: 95vw;
+    max-width: 80%;
     height: 80vh;
+    max-height: 80%;
     background-color: rgb(7, 7, 7);
     border-radius: 20px;
     border: 1px solid #353535;
-    border-radius: 20.6864px;
-    
-
-}
+    overflow: auto;
+    padding: 20px;
+    overflow-x: hidden;
+  }
 
 .modal h1{
     text-transform: uppercase;
