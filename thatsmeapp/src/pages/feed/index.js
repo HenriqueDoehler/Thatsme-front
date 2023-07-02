@@ -42,8 +42,8 @@ export default function Feed() {
   });
 
   const handleFeedInformation = useCallback(async () => {
-    const loginEmail = localStorage.getItem("email");
     try {
+      const loginEmail = localStorage.getItem("email");
       const response = await fetch(
         `https://api.thatsme.site/feed/${loginEmail}`,
         {
@@ -54,8 +54,8 @@ export default function Feed() {
         }
       );
       const data = await response.json();
+      console.log(data)
       setInitialFeedData(data?.data);
-      console.log(data.data);
       const newData = data.data.map((medal) => medal.cod_model);
       setCodeMedal(newData);
     } catch (err) {
@@ -94,7 +94,7 @@ export default function Feed() {
     } catch (err) {
       console.error(err);
     }
-  }, [urlThumbnail]);
+  }, [codeMedal]);
 
   useEffect(() => {
     const filterFeed = () => {
@@ -136,10 +136,14 @@ export default function Feed() {
   }
 
   const mainUser = async () => {
-    const email = localStorage.getItem("email");
-    const response = await fetch(`https://api.thatsme.site/wallets/${email}`);
-    const data = await response.json();
-    setThisUser(data[data.length - 1].user_name);
+    try {
+      const email = localStorage.getItem("email");
+      const response = await fetch(`https://api.thatsme.site/wallets/${email}`);
+      const data = await response.json();
+      setThisUser(data[data.length - 1].user_name);
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   useEffect(() => {
@@ -152,7 +156,8 @@ export default function Feed() {
 
   useEffect(() => {
     mainUser();
-  }, [thisUser]);
+  }, [mainUser]);
+
 
   return (
     <div className={styles.container}>
@@ -213,13 +218,18 @@ export default function Feed() {
               <Avatar
                 alt={thisUser[0]}
                 src="/static/images/avatar/1.jpg"
-                sx={{ width: 72, height: 72, marginRight: "10px", fontSize: '2rem' }}
+                sx={{
+                  width: 72,
+                  height: 72,
+                  marginRight: "10px",
+                  fontSize: "2rem",
+                }}
               />
             </Grid>
             <Grid item>
               <SearchField setSearchField={setSearchField} />
               {!initialFeedData && (
-                <p style={{ marginTop: "50%", fontSize: "1.5rem" }}>
+                <p className={styles.nothingToShow}>
                   Oops! Ainda não temos o que mostrar…
                 </p>
               )}

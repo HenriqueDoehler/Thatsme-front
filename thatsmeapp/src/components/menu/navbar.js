@@ -47,24 +47,24 @@ const Navbar = () => {
         }`}
       >
         <div className={styles.walletAndFeedContainer}>
-        <Link style={{ textDecoration: "none" }} href="/feed" passHref>
+        <Link style={{ textDecoration: "none" }} href="/feed">
           <span className={styles.span}>Feed</span>
         </Link>
-        <Link style={{ textDecoration: "none" }} href="/wallet" passHref>
+        <Link style={{ textDecoration: "none" }} href="/wallet">
           <span className={styles.span}>Carteira</span>
         </Link>
         </div>
-        <Link style={{ textDecoration: "none" }} href="/" passHref>
+        <Link style={{ textDecoration: "none" }} href="/">
           <span className={styles.span}>Home</span>
         </Link>
-        <Link style={{ textDecoration: "none" }} href="/suporte" passHref>
+        <Link style={{ textDecoration: "none" }} href="/suporte">
           <span className={styles.span}>FAQ & Suporte</span>
         </Link>
-        <Link style={{ textDecoration: "none" }} href="/comoFunciona" passHref>
+        <Link style={{ textDecoration: "none" }} href="/comoFunciona">
           <span className={styles.span}>Como funciona</span>
         </Link>
         <div className={styles.walletAndFeedContainer}>
-        <a onClick={handleLogout} style={{ textDecoration: "none" }} passHref>
+        <a onClick={handleLogout} style={{ textDecoration: "none" }}>
           <span className={styles.span}>Sair</span>
         </a>
         </div>

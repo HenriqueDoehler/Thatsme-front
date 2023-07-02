@@ -15,6 +15,11 @@
   padding-left: 2rem;
 }
 
+.nothingToShow {
+  margin-top: 50%;
+  font-size: 1.5rem;
+}
+
 @media screen and (max-width: 650px) {
   .feedContainer {
     padding-left: 0;
@@ -27,6 +32,13 @@
   .searchAndAvatarContainer {
     display: flex;
     gap: 0.5rem;
+  }
+
+  .nothingToShow {
+    text-align: center;
+    line-height: 1.3;
+    padding: 0px 5px;
+    margin-top: 10rem;
   }
 
 }
