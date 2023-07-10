@@ -1,27 +1,21 @@
-import * as React from "react";
+import { useState, useEffect, useContext, useCallback } from "react";
 import CardHeader from "@mui/material/CardHeader";
 import CardContent from "@mui/material/CardContent";
 import FavoriteIcon from "@mui/icons-material/Favorite";
 import CardActions from "@mui/material/CardActions";
 import Typography from "@mui/material/Typography";
-import Navbar from "@/components/menu/navbar";
 import Grid from "@mui/material/Grid";
+import Avatar from "@mui/material/Avatar";
+import { StyledIconButtonFavoriteIcon, AnimationCard, StyledIconFavoriteIconPositive } from "./styles";
+import { EmailContext } from "@/context/EmailContext";
+import { useRouter } from "next/router";
+import Modal from "@/components/modals/modalsFrame";
+import Navbar from "@/components/menu/navbar";
 import SearchField from "@/components/SearchField";
 import SideNav from "@/components/menu/sideNav";
 import styles from "@/styles/feed.module.css";
 
-import Avatar from "@mui/material/Avatar";
-import {
-  StyledIconButtonFavoriteIcon,
-  AnimationCard,
-  StyledIconFavoriteIconPositive,
-} from "../../styles/styles.js";
-import { useState, useEffect, useContext, useCallback } from "react";
-import { EmailContext } from "@/context/EmailContext";
-import { useRouter } from "next/router";
-import Modal from "@/components/modals/modalsFrame";
-
-export default function Feed() {
+const Feed = () => {
   const router = useRouter();
   const { setEmail } = useContext(EmailContext);
   const [thisUser, setThisUser] = useState("");
@@ -42,20 +36,17 @@ export default function Feed() {
   });
 
   const handleFeedInformation = useCallback(async () => {
-    const loginEmail = localStorage.getItem("email");
     try {
-      const response = await fetch(
-        `https://api.thatsme.site/feed/${loginEmail}`,
-        {
-          method: "GET",
-          headers: {
-            "Content-Type": "application/json",
-          },
-        }
-      );
+      const loginEmail = localStorage.getItem("email");
+      const response = await fetch(`https://api.thatsme.site/feed/${loginEmail}`, {
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json",
+        },
+      });
       const data = await response.json();
+      console.log(data);
       setInitialFeedData(data?.data);
-      console.log(data.data);
       const newData = data.data.map((medal) => medal.cod_model);
       setCodeMedal(newData);
     } catch (err) {
@@ -94,7 +85,7 @@ export default function Feed() {
     } catch (err) {
       console.error(err);
     }
-  }, [urlThumbnail]);
+  }, [codeMedal]);
 
   useEffect(() => {
     const filterFeed = () => {
@@ -114,7 +105,7 @@ export default function Feed() {
     router.push("/viewUsersProfile");
   };
 
-  function handleClickModal(
+  const handleClickModal = (
     company_name,
     cod_model,
     user_name,
@@ -122,7 +113,7 @@ export default function Feed() {
     date,
     address,
     event_description
-  ) {
+  ) => {
     setModalData({
       codModel: cod_model,
       eventName: event_name,
@@ -133,229 +124,225 @@ export default function Feed() {
       companyName: company_name,
     });
     setShowModal(true);
-  }
+  };
 
   const mainUser = async () => {
-    const email = localStorage.getItem("email");
-    const response = await fetch(`https://api.thatsme.site/wallets/${email}`);
-    const data = await response.json();
-    setThisUser(data[data.length - 1].user_name);
+    try {
+      const email = localStorage.getItem("email");
+      const response = await fetch(`https://api.thatsme.site/wallets/${email}`);
+      const data = await response.json();
+      setThisUser(data[data.length - 1].user_name);
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   useEffect(() => {
     handleFeedInformation();
-  }, [handleFeedInformation]);
-
-  useEffect(() => {
     handleThumbnail();
-  }, [handleThumbnail]);
-
-  useEffect(() => {
     mainUser();
-  }, [thisUser]);
+  }, [handleFeedInformation, handleThumbnail]);
 
   return (
     <div className={styles.container}>
-      <Grid>
-        <Navbar />
-        <Grid container justifyContent="center">
-          <Modal
-            show={showModal}
-            onClose={() => setShowModal(false)}
-            codModel={modalData.codModel}
-            eventName={modalData.eventName}
-            description={modalData.description}
-            nameUser={modalData.nameUser}
-            eventAdress={modalData.eventAdress}
-            eventDate={modalData.eventDate}
-            companyName={modalData.companyName}
-          />
-          <Grid item xs={12} sm={1.2} xl={1} container justifyContent="center">
-            <SideNav />
-          </Grid>
+      <Navbar />
+      <Grid container justifyContent="center">
+        <Modal
+          show={showModal}
+          onClose={() => setShowModal(false)}
+          codModel={modalData.codModel}
+          eventName={modalData.eventName}
+          description={modalData.description}
+          nameUser={modalData.nameUser}
+          eventAdress={modalData.eventAdress}
+          eventDate={modalData.eventDate}
+          companyName={modalData.companyName}
+        />
+        <Grid item xs={12} sm={1.2} xl={1} container justifyContent="center">
+          <SideNav />
+        </Grid>
+        <Grid
+          container
+          alignItems="baseline"
+          className={styles.feedContainer}
+          sx={{
+            justifyContent: {
+              xs: "center",
+              sm: "start",
+              md: "start",
+              lg: "start",
+              xl: "start",
+            },
+          }}
+          item
+          xs={12}
+          sm={10}
+          xl={10.5}
+        >
           <Grid
-            container
-            alignItems="baseline"
-            className={styles.feedContainer}
+            item
             sx={{
-              justifyContent: {
-                xs: "center",
-                sm: "start",
-                md: "start",
-                lg: "start",
-                xl: "start",
+              marginRight: {
+                xs: 0,
+                sm: 2,
+                md: 2,
+                lg: 2,
+                xl: 4,
+              },
+              marginTop: {
+                xs: 2,
+                sm: 0,
+                md: 0,
+                lg: 0,
+                xl: 0,
               },
             }}
-            item
-            xs={12}
-            sm={10}
-            xl={10.5}
           >
-            <Grid
-              item
+            <Avatar
+              alt={thisUser[0]}
+              src="/static/images/avatar/1.jpg"
               sx={{
-                marginRight: {
-                  xs: 0,
-                  sm: 2,
-                  md: 2,
-                  lg: 2,
-                  xl: 4,
-                },
-                marginTop: {
-                  xs: 2,
-                  sm: 0,
-                  md: 0,
-                  lg: 0,
-                  xl: 0,
-                },
+                width: 72,
+                height: 72,
+                marginRight: "10px",
+                fontSize: "2rem",
               }}
-            >
-              <Avatar
-                alt={thisUser[0]}
-                src="/static/images/avatar/1.jpg"
-                sx={{
-                  width: 72,
-                  height: 72,
-                  marginRight: "10px",
-                  fontSize: "2rem",
-                }}
-              />
-            </Grid>
-            <Grid item>
-              <SearchField setSearchField={setSearchField} />
-              {!initialFeedData && (
-                <p style={{ marginTop: "50%", fontSize: "1.5rem" }}>
-                  Oops! Ainda não temos o que mostrar…
-                </p>
-              )}
-            </Grid>
-            {filteredFeedData?.map(
-              (
-                {
-                  id,
-                  email,
-                  avatar,
-                  user_name,
-                  event_name,
-                  data,
-                  company_name,
-                  cod_model,
-                  liked,
-                  amount_likes,
-                  address,
-                  event_description,
-                  medal_id,
-                },
-                index
-              ) => {
-                return (
-                  <Grid
-                    container
-                    className={styles.cardContainer}
-                    alignItems="center"
-                    sx={{
-                      "& .MuiTypography-root": {
-                        color: "white",
-                      },
-                      justifyContent: {
-                        xs: "center",
-                        sm: "start",
-                        md: "start",
-                        lg: "start",
-                        xl: "start",
-                      },
-                    }}
-                    key={id}
-                  >
-                    <AnimationCard>
-                      <a
-                        onClick={() => handleNavigateToViewUsersProfile(email)}
-                        style={{ cursor: "pointer" }}
-                      >
-                        <CardHeader
-                          style={{
-                            backgroundColor: "black",
-                          }}
-                          avatar={
-                            <Avatar
-                              sx={{ bgcolor: "#FF4F79" }}
-                              aria-label="recipe"
-                            >
-                              {avatar}
-                            </Avatar>
-                          }
-                          title={user_name}
-                        />
-                      </a>
-                      <Grid container justifyContent="center">
-                        <span
-                          onClick={() =>
-                            handleClickModal(
-                              company_name,
-                              cod_model,
-                              user_name,
-                              event_name,
-                              data,
-                              address,
-                              event_description
-                            )
-                          }
-                          style={{ cursor: "pointer" }}
-                        >
-                          <img
-                            src={urlThumbnail[index]}
-                            className={styles.feedCard}
-                          />
-                        </span>
-                      </Grid>
-                      <CardContent
-                        style={{
-                          paddingBottom: "0px",
-                          textAlign: "center",
-                          backgroundColor: "black",
-                        }}
-                      >
-                        <Typography
-                          variant="body2"
-                          color="text.secondary"
-                          style={{
-                            fontWeight: 300,
-                          }}
-                        >
-                          {event_name}
-                        </Typography>
-                      </CardContent>
-                      <CardActions
-                        style={{
-                          backgroundColor: "black",
-                        }}
-                      >
-                        <Grid container alignItems="center">
-                          <Grid item>
-                            <StyledIconButtonFavoriteIcon
-                              aria-label="add to favorites"
-                              onClick={() => handleFeedLike(id)}
-                            >
-                              {liked ? (
-                                <StyledIconFavoriteIconPositive />
-                              ) : (
-                                <FavoriteIcon />
-                              )}
-                            </StyledIconButtonFavoriteIcon>
-                          </Grid>
-                          <Grid item ml={1}>
-                            <Typography>{amount_likes}</Typography>{" "}
-                          </Grid>
-                        </Grid>
-                      </CardActions>
-                    </AnimationCard>
-                  </Grid>
-                );
-              }
+            />
+          </Grid>
+          <Grid item>
+            <SearchField setSearchField={setSearchField} />
+            {!initialFeedData && (
+              <p className={styles.nothingToShow}>
+                Oops! Ainda não temos o que mostrar…
+              </p>
             )}
           </Grid>
+          {filteredFeedData?.map(
+            (
+              {
+                id,
+                email,
+                avatar,
+                user_name,
+                event_name,
+                data,
+                company_name,
+                cod_model,
+                liked,
+                amount_likes,
+                address,
+                event_description,
+                medal_id,
+              },
+              index
+            ) => (
+              <Grid
+                container
+                className={styles.cardContainer}
+                alignItems="center"
+                sx={{
+                  "& .MuiTypography-root": {
+                    color: "white",
+                  },
+                  justifyContent: {
+                    xs: "center",
+                    sm: "start",
+                    md: "start",
+                    lg: "start",
+                    xl: "start",
+                  },
+                }}
+                key={id}
+              >
+                <AnimationCard>
+                  <a
+                    onClick={() => handleNavigateToViewUsersProfile(email)}
+                    style={{ cursor: "pointer" }}
+                  >
+                    <CardHeader
+                      style={{
+                        backgroundColor: "black",
+                      }}
+                      avatar={
+                        <Avatar
+                          sx={{ bgcolor: "#FF4F79" }}
+                          aria-label="recipe"
+                        >
+                          {avatar}
+                        </Avatar>
+                      }
+                      title={user_name}
+                    />
+                  </a>
+                  <Grid container justifyContent="center">
+                    <span
+                      onClick={() =>
+                        handleClickModal(
+                          company_name,
+                          cod_model,
+                          user_name,
+                          event_name,
+                          data,
+                          address,
+                          event_description
+                        )
+                      }
+                      style={{ cursor: "pointer" }}
+                    >
+                      <img
+                        src={urlThumbnail[index]}
+                        className={styles.feedCard}
+                      />
+                    </span>
+                  </Grid>
+                  <CardContent
+                    style={{
+                      paddingBottom: "0px",
+                      textAlign: "center",
+                      backgroundColor: "black",
+                    }}
+                  >
+                    <Typography
+                      variant="body2"
+                      color="text.secondary"
+                      style={{
+                        fontWeight: 300,
+                      }}
+                    >
+                      {event_name}
+                    </Typography>
+                  </CardContent>
+                  <CardActions
+                    style={{
+                      backgroundColor: "black",
+                    }}
+                  >
+                    <Grid container alignItems="center">
+                      <Grid item>
+                        <StyledIconButtonFavoriteIcon
+                          aria-label="add to favorites"
+                          onClick={() => handleFeedLike(id)}
+                        >
+                          {liked ? (
+                            <StyledIconFavoriteIconPositive />
+                          ) : (
+                            <FavoriteIcon />
+                          )}
+                        </StyledIconButtonFavoriteIcon>
+                      </Grid>
+                      <Grid item ml={1}>
+                        <Typography>{amount_likes}</Typography>{" "}
+                      </Grid>
+                    </Grid>
+                  </CardActions>
+                </AnimationCard>
+              </Grid>
+            )
+          )}
         </Grid>
       </Grid>
     </div>
   );
 }
+
+export default Feed;

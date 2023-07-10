@@ -22,8 +22,8 @@ function Modal(props) {
         </div>
         <iframe
           id={`iframe-${props.codModel}`}
-          frameborder="0"
-          allowfullscreen
+          frameBorder="0"
+          allowFullScreen
           mozallowfullscreen="true"
           webkitallowfullscreen="true"
           allow="autoplay; fullscreen; xr-spatial-tracking"
